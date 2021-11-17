@@ -39,5 +39,4 @@ const Template: Story<LoadingViewProps> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   isLoading: true,
-  size: "large",
 };
