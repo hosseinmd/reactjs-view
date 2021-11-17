@@ -5,9 +5,9 @@
   "description": "React-native View implementation for web",
   "workspaces": {
     "packages": [
-      "packages/baseComponent",
-      "packages/baseCore",
-      "packages/baseAsset",
+      "packages/component",
+      "packages/core",
+      "packages/asset",
       "src/web",
       "src/stories"
     ]
