@@ -1,28 +1,28 @@
 //@ts-ignore
-import RobotoBold from "plus-base-asset/fonts/roboto/Roboto-Bold.woff";
-//@ts-ignore
-import RobotoLight from "plus-base-asset/fonts/roboto/Roboto-Light.woff";
-//@ts-ignore
-import RobotoMedium from "plus-base-asset/fonts/roboto/Roboto-Medium.woff";
-//@ts-ignore
-import RobotoRegular from "plus-base-asset/fonts/roboto/Roboto-Regular.woff";
-//@ts-ignore
-import YekanBakhEnBold from "plus-base-asset/fonts/YekanBakh-En-Bold.woff";
-//@ts-ignore
-import YekanBakhEnLight from "plus-base-asset/fonts/YekanBakh-En-Light.woff";
-//@ts-ignore
-import YekanBakhEnMedium from "plus-base-asset/fonts/YekanBakh-En-Medium.woff";
-//@ts-ignore
-import YekanBakhEnRegular from "plus-base-asset/fonts/YekanBakh-En-Regular.woff";
-//@ts-ignore
-import YekanBakhFaBold from "plus-base-asset/fonts/YekanBakh-Fa-Bold.woff";
-//@ts-ignore
-import YekanBakhFaLight from "plus-base-asset/fonts/YekanBakh-Fa-Light.woff";
-//@ts-ignore
-import YekanBakhFaMedium from "plus-base-asset/fonts/YekanBakh-Fa-Medium.woff";
-//@ts-ignore
-import YekanBakhFaRegular from "plus-base-asset/fonts/YekanBakh-Fa-Regular.woff";
 import { createUseStyles, jss } from "react-jss";
+import RobotoBold from "reactjs-view-asset/fonts/roboto/Roboto-Bold.woff";
+//@ts-ignore
+import RobotoLight from "reactjs-view-asset/fonts/roboto/Roboto-Light.woff";
+//@ts-ignore
+import RobotoMedium from "reactjs-view-asset/fonts/roboto/Roboto-Medium.woff";
+//@ts-ignore
+import RobotoRegular from "reactjs-view-asset/fonts/roboto/Roboto-Regular.woff";
+//@ts-ignore
+import YekanBakhEnBold from "reactjs-view-asset/fonts/YekanBakh-En-Bold.woff";
+//@ts-ignore
+import YekanBakhEnLight from "reactjs-view-asset/fonts/YekanBakh-En-Light.woff";
+//@ts-ignore
+import YekanBakhEnMedium from "reactjs-view-asset/fonts/YekanBakh-En-Medium.woff";
+//@ts-ignore
+import YekanBakhEnRegular from "reactjs-view-asset/fonts/YekanBakh-En-Regular.woff";
+//@ts-ignore
+import YekanBakhFaBold from "reactjs-view-asset/fonts/YekanBakh-Fa-Bold.woff";
+//@ts-ignore
+import YekanBakhFaLight from "reactjs-view-asset/fonts/YekanBakh-Fa-Light.woff";
+//@ts-ignore
+import YekanBakhFaMedium from "reactjs-view-asset/fonts/YekanBakh-Fa-Medium.woff";
+//@ts-ignore
+import YekanBakhFaRegular from "reactjs-view-asset/fonts/YekanBakh-Fa-Regular.woff";
 import { generateIndex } from "reactjs-view-core";
 
 export const fontWeights = {

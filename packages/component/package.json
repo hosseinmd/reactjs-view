@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "plus-base-asset": "^1.5.7",
+    "reactjs-view-asset": "^1.5.7",
     "reactjs-view-core": "^0.0.1",
     "rc-util": "^5.13.2",
     "react-jss": "^10.7.1",
