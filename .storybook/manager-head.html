@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <script>
+    new MutationObserver(function () {
+      if (document.title.match(/Storybook/gi)) {
+        document.title = "Reactjs-View";
+      }
+    }).observe(document.getElementsByTagName("title")[0], {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+  </script>
+</html>

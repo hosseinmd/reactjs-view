@@ -1,0 +1,20 @@
+# binaries
+dist/
+node_modules/
+.env
+# production
+build/
+storybook-static/
+
+.history
+.vscode
+.DS_Store
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.eslintcache
+
+.vs
+.idea/

@@ -1,0 +1,20 @@
+{
+  "packages": [
+    "packages/component",
+    "packages/core",
+    "packages/asset",
+    "src/web",
+    "src/stories"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {},
+    "version": {
+      "message": "chore(reactjs-view): publish",
+      "conventionalCommits": true,
+      "yes": true
+    }
+  },
+  "version": "1.5.13"
+}

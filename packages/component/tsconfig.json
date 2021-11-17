@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "composite": true,
+    "declaration": true,
+    "checkJs": false,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmit": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
