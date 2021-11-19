@@ -81,7 +81,7 @@ module.exports = {
               prefix: ["is", "should", "has", "can", "did", "will"],
               filter: {
                 // you can expand this regex to add more allowed names
-                regex: "^([_]+[A-Z]+[_]+)$",
+                regex: "^[_]+.*$",
                 match: false,
               },
             },
