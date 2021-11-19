@@ -72,7 +72,7 @@ const classes = jss
       },
     },
     {
-      index: generateIndex("molecules", "module"),
+      index: generateIndex("molecules", "coreModule"),
     },
   )
   .attach().classes;

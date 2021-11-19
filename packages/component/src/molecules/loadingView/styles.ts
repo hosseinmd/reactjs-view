@@ -10,7 +10,7 @@ const useStyles = createUseStyles(
     },
     container: {},
   },
-  { index: generateIndex("molecules", "module") },
+  { index: generateIndex("molecules", "coreModule") },
 );
 
 export default useStyles;

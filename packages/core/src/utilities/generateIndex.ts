@@ -15,14 +15,16 @@ const getIndexes = (startIndex: number) => ({
   pages: startIndex + 11000,
 });
 
-const levels = {
+const scopes = {
   coreModule: getIndexes(0),
   module: getIndexes(20000),
   app: getIndexes(40000),
 };
 
-function generateIndex(scope: Index, level: keyof typeof levels = "app") {
-  return levels[level][scope]++;
+export type Scope = keyof typeof scopes;
+
+function generateIndex(index: Index, scope: Scope = "app") {
+  return scopes[scope][index]++;
 }
 
 export { generateIndex };

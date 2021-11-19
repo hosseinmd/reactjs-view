@@ -16,7 +16,7 @@ const useStyle = createUseStyles(
     },
   },
   {
-    index: generateIndex("molecules", "module"),
+    index: generateIndex("molecules", "coreModule"),
   },
 );
 

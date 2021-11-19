@@ -1,5 +1,6 @@
 import fs from "fs";
 import { join, resolve } from "path";
+import { Scope } from "../utilities/generateIndex";
 
 const components = [
   "atoms",
@@ -44,11 +45,12 @@ function recursiveChecker(
   componentDir: string,
   atomicName: string,
   resolver: (...dirs: string[]) => string,
+  scope?: Scope,
 ) {
   const files = fs.readdirSync(resolver(componentDir));
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
-      recursiveChecker(join(componentDir, file), atomicName, resolver);
+      recursiveChecker(join(componentDir, file), atomicName, resolver, scope);
 
       return;
     }
@@ -60,7 +62,17 @@ function recursiveChecker(
     const content = fs.readFileSync(resolver(componentDir, file)).toString();
 
     if (content.includes("generateIndex")) {
-      if (content.includes(`generateIndex("${atomicName}"`)) {
+      if (
+        content
+          .replace(/[\n\s]+/g, "")
+          .match(
+            new RegExp(
+              `generateIndex\\(["']${atomicName}["']${
+                scope ? `,["']${scope}["']` : ""
+              }`,
+            ),
+          )
+      ) {
         return;
       } else {
         throwError("", componentDir, file, atomicName, resolver);
@@ -74,7 +86,7 @@ function recursiveChecker(
   });
 }
 
-function checkJssIndex(dirname: string) {
+function checkJssIndex(dirname: string, scope?: Scope) {
   const resolver = (...dirs: string[]) => resolve(dirname, `../`, ...dirs);
 
   const atomicsDirs = readRoot(resolver);
@@ -90,7 +102,12 @@ function checkJssIndex(dirname: string) {
             return;
           }
 
-          recursiveChecker(join(atomicDir, componentDir), atomicDir, resolver);
+          recursiveChecker(
+            join(atomicDir, componentDir),
+            atomicDir,
+            resolver,
+            scope,
+          );
         });
       }
     });
