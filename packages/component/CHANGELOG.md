@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/hosseinmd/reactjs-view/compare/v0.2.0...v0.2.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* loader ([1856b4f](https://github.com/hosseinmd/reactjs-view/commit/1856b4f7dda7913dfd3718c3c9ba41020f56b939))
+
+
+
+
+
 # [0.2.0](https://github.com/hosseinmd/reactjs-view/compare/v0.1.2...v0.2.0) (2021-11-19)
 
 
