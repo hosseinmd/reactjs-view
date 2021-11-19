@@ -1,17 +1,17 @@
-//@ts-nocheck
 import fs from "fs";
 import path from "path";
 
-const resolver = (...dirs: string[]) => path.resolve(__dirname, `../`, ...dirs);
-
-function readRoot() {
+function readRoot(resolver: (...dirs: string[]) => string) {
   return fs.readdirSync(resolver(""));
 }
-function recursiveChecker(componentDir: string) {
+function recursiveChecker(
+  componentDir: string,
+  resolver: (...dirs: string[]) => string,
+) {
   const files = fs.readdirSync(resolver(componentDir));
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
-      recursiveChecker(resolver(componentDir, file));
+      recursiveChecker(resolver(componentDir, file), resolver);
       return;
     }
     const content = fs.readFileSync(resolver(componentDir, file)).toString();
@@ -40,9 +40,11 @@ function recursiveChecker(componentDir: string) {
   });
 }
 
-function checkPersian() {
+function checkPersian(dirname: string) {
+  const resolver = (...dirs: string[]) => path.resolve(dirname, `../`, ...dirs);
+
   describe("Persian Characters Localizing", () => {
-    const rootDirectories = readRoot();
+    const rootDirectories = readRoot(resolver);
     rootDirectories.forEach((rootDirectory) => {
       if (fs.lstatSync(resolver(rootDirectory)).isDirectory()) {
         const componentsDirs = fs.readdirSync(resolver(rootDirectory));
@@ -50,7 +52,7 @@ function checkPersian() {
           if (fs.lstatSync(resolver(rootDirectory, componentsDir)).isFile()) {
             return;
           }
-          recursiveChecker(path.join(rootDirectory, componentsDir));
+          recursiveChecker(path.join(rootDirectory, componentsDir), resolver);
         });
       }
     });

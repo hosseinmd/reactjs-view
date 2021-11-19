@@ -41,9 +41,7 @@ const components = [
   "pages",
 ];
 
-const resolver = (...dirs: string[]) => resolve(__dirname, `../`, ...dirs);
-
-function readRoot() {
+function readRoot(resolver: (...dirs: string[]) => string) {
   return fs.readdirSync(resolver(""));
 }
 
@@ -55,6 +53,7 @@ function throwError(
   value: string,
   componentDir: string,
   file: string,
+  resolver: (...dirs: string[]) => string,
   line?: number,
 ) {
   const lineInfo = line === undefined ? "" : `:${line}:0`;
@@ -75,7 +74,11 @@ function throwError(
   );
 }
 
-function recursiveChecker(componentDir: string, atomicName: string) {
+function recursiveChecker(
+  componentDir: string,
+  atomicName: string,
+  resolver: (...dirs: string[]) => string,
+) {
   let isCorrectPosition = false;
 
   const files = fs.readdirSync(resolver(componentDir));
@@ -84,6 +87,7 @@ function recursiveChecker(componentDir: string, atomicName: string) {
       const _isCorrectPosition = recursiveChecker(
         join(componentDir, file),
         atomicName,
+        resolver,
       );
       if (_isCorrectPosition) {
         isCorrectPosition = true;
@@ -111,13 +115,25 @@ function recursiveChecker(componentDir: string, atomicName: string) {
             join(...componentDir.split("\\").join("/").split("/").slice(0, 2)),
           )
         ) {
-          throwError(path.node.source.value, componentDir, file, line);
+          throwError(
+            path.node.source.value,
+            componentDir,
+            file,
+            resolver,
+            line,
+          );
           return;
         }
 
         components.slice(getIndex(atomicName) + 1).forEach((topDir) => {
           if (join(componentDir, path.node.source.value).startsWith(topDir)) {
-            throwError(path.node.source.value, componentDir, file, line);
+            throwError(
+              path.node.source.value,
+              componentDir,
+              file,
+              resolver,
+              line,
+            );
           }
         });
 
@@ -147,9 +163,11 @@ function recursiveChecker(componentDir: string, atomicName: string) {
   return isCorrectPosition;
 }
 
-function check() {
+function checkAtomicDesign(dirname: string) {
+  const resolver = (...dirs: string[]) => resolve(dirname, `../`, ...dirs);
+
   describe("Atomic design structure", () => {
-    const atomicsDirs = readRoot();
+    const atomicsDirs = readRoot(resolver);
     atomicsDirs.forEach((atomicDir) => {
       if (
         getIndex(atomicDir) !== -1 &&
@@ -164,6 +182,7 @@ function check() {
           const isCorrectPosition = recursiveChecker(
             join(atomicDir, componentDir),
             atomicDir,
+            resolver,
           );
 
           if (
@@ -171,7 +190,7 @@ function check() {
             components[getIndex(atomicDir)] !== "pages" &&
             components[getIndex(atomicDir)] !== "atoms"
           ) {
-            throwError("", atomicDir, componentDir);
+            throwError("", atomicDir, componentDir, resolver);
           }
         });
       }
@@ -182,4 +201,4 @@ function check() {
   });
 }
 
-export { check };
+export { checkAtomicDesign };

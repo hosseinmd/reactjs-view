@@ -10,9 +10,7 @@ const components = [
   "pages",
 ];
 
-const resolver = (...dirs: string[]) => resolve(__dirname, `../`, ...dirs);
-
-function readRoot() {
+function readRoot(resolver: (...dirs: string[]) => string) {
   return fs.readdirSync(resolver(""));
 }
 
@@ -25,6 +23,7 @@ function throwError(
   componentDir: string,
   file: string,
   atomicName: string,
+  resolver: (...dirs: string[]) => string,
 ) {
   const error = new Error(
     `(jss Rules): generateIndex parameter is not correct in ${componentDir
@@ -41,11 +40,15 @@ function throwError(
   );
 }
 
-function recursiveChecker(componentDir: string, atomicName: string) {
+function recursiveChecker(
+  componentDir: string,
+  atomicName: string,
+  resolver: (...dirs: string[]) => string,
+) {
   const files = fs.readdirSync(resolver(componentDir));
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
-      recursiveChecker(join(componentDir, file), atomicName);
+      recursiveChecker(join(componentDir, file), atomicName, resolver);
 
       return;
     }
@@ -57,10 +60,10 @@ function recursiveChecker(componentDir: string, atomicName: string) {
     const content = fs.readFileSync(resolver(componentDir, file)).toString();
 
     if (content.includes("generateIndex")) {
-      if (content.includes(`generateIndex("${atomicName}")`)) {
+      if (content.includes(`generateIndex("${atomicName}"`)) {
         return;
       } else {
-        throwError("", componentDir, file, atomicName);
+        throwError("", componentDir, file, atomicName, resolver);
         // throw new Error(
         //   `generateIndex parameter is wrong at ${componentDir} expected to be *${atomicName}*`,
         // );
@@ -71,8 +74,10 @@ function recursiveChecker(componentDir: string, atomicName: string) {
   });
 }
 
-function check() {
-  const atomicsDirs = readRoot();
+function checkJssIndex(dirname: string) {
+  const resolver = (...dirs: string[]) => resolve(dirname, `../`, ...dirs);
+
+  const atomicsDirs = readRoot(resolver);
   describe("jss design structure", () => {
     atomicsDirs.forEach((atomicDir) => {
       if (
@@ -85,7 +90,7 @@ function check() {
             return;
           }
 
-          recursiveChecker(join(atomicDir, componentDir), atomicDir);
+          recursiveChecker(join(atomicDir, componentDir), atomicDir, resolver);
         });
       }
     });
@@ -95,4 +100,4 @@ function check() {
   });
 }
 
-export { check };
+export { checkJssIndex };

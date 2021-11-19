@@ -1,5 +1,6 @@
 {
   "name": "reactjs-view-asset",
   "version": "0.1.0",
-  "private": false
+  "private": false,
+  "sideEffects": false
 }

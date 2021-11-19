@@ -81,7 +81,7 @@ const useThemes = createUseStyles(
       fontFamily: "yekanBakhFaBold",
     },
   },
-  { index: generateIndex("atoms", "module") },
+  { index: generateIndex("molecules", "module") },
 );
 
 jss

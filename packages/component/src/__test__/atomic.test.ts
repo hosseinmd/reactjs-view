@@ -1,3 +1,3 @@
-import { check } from "./atomicStructure";
+import { checkAtomicDesign } from "reactjs-view-core/src/tests/atomicStructure";
 
-check();
+checkAtomicDesign(__dirname);
