@@ -1,27 +1,15 @@
-//@ts-ignore
-import { createUseStyles, jss } from "react-jss";
+import { createUseStyles } from "react-jss";
 import RobotoBold from "reactjs-view-asset/fonts/roboto/Roboto-Bold.woff";
-//@ts-ignore
 import RobotoLight from "reactjs-view-asset/fonts/roboto/Roboto-Light.woff";
-//@ts-ignore
 import RobotoMedium from "reactjs-view-asset/fonts/roboto/Roboto-Medium.woff";
-//@ts-ignore
 import RobotoRegular from "reactjs-view-asset/fonts/roboto/Roboto-Regular.woff";
-//@ts-ignore
 import YekanBakhEnBold from "reactjs-view-asset/fonts/YekanBakh-En-Bold.woff";
-//@ts-ignore
 import YekanBakhEnLight from "reactjs-view-asset/fonts/YekanBakh-En-Light.woff";
-//@ts-ignore
 import YekanBakhEnMedium from "reactjs-view-asset/fonts/YekanBakh-En-Medium.woff";
-//@ts-ignore
 import YekanBakhEnRegular from "reactjs-view-asset/fonts/YekanBakh-En-Regular.woff";
-//@ts-ignore
 import YekanBakhFaBold from "reactjs-view-asset/fonts/YekanBakh-Fa-Bold.woff";
-//@ts-ignore
 import YekanBakhFaLight from "reactjs-view-asset/fonts/YekanBakh-Fa-Light.woff";
-//@ts-ignore
 import YekanBakhFaMedium from "reactjs-view-asset/fonts/YekanBakh-Fa-Medium.woff";
-//@ts-ignore
 import YekanBakhFaRegular from "reactjs-view-asset/fonts/YekanBakh-Fa-Regular.woff";
 import { generateIndex } from "reactjs-view-core";
 
@@ -42,7 +30,20 @@ export const fontSizes = {
   xxlarge: 22,
 };
 
-const useThemes = createUseStyles(
+const useThemes = createUseStyles<
+  | "medium"
+  | "bold"
+  | "medium-fa"
+  | "medium-en"
+  | "regular"
+  | "regular-fa"
+  | "regular-en"
+  | "light"
+  | "light-en"
+  | "light-fa"
+  | "bold-en"
+  | "bold-fa"
+>(
   {
     medium: {
       fontFamily: "yekanBakhMedium",
@@ -80,13 +81,7 @@ const useThemes = createUseStyles(
     "bold-fa": {
       fontFamily: "yekanBakhFaBold",
     },
-  },
-  { index: generateIndex("molecules", "coreModule") },
-);
-
-jss
-  .createStyleSheet({
-    "@font-face": [
+    ["@font-face" as any]: [
       {
         fontFamily: "yekanBakhLight",
         src: `url(${YekanBakhEnLight}) format('woff')`,
@@ -137,7 +132,8 @@ jss
         src: `url(${RobotoBold}) format('woff')`,
       },
     ],
-  })
-  .attach();
+  },
+  { index: generateIndex("molecules", "coreModule") },
+);
 
 export { useThemes };

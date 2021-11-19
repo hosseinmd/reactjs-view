@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import classNames from "classnames";
 import { View, ViewProps } from "../../atoms/view";
 import { Loader } from "./loader";
 import useStyles from "./styles";
@@ -7,8 +7,6 @@ const defaultLoader = <Loader />;
 export interface LoadingViewProps extends ViewProps {
   // size?: "small" | "large" | "default";
   // color?: string;
-  children?: React.ReactNode;
-  className?: string;
   isLoading?: boolean;
   /**
    * Don't render children until isLoading is true
@@ -16,10 +14,6 @@ export interface LoadingViewProps extends ViewProps {
    * @default true
    */
   isLazy?: boolean;
-  style?: CSSProperties;
-  prefixCls?: string | undefined;
-  tip?: string | undefined;
-  delay?: number | undefined;
   wrapperClassName?: string | undefined;
   indicator?: JSX.Element;
 }
@@ -30,9 +24,6 @@ const LoadingView = ({
   children,
   isLoading,
   isLazy = true,
-  prefixCls,
-  tip,
-  delay,
   wrapperClassName,
   indicator = defaultLoader,
   ...rest
@@ -42,7 +33,11 @@ const LoadingView = ({
   return (
     <View {...rest}>
       {(!isLoading || !isLazy) && children}
-      {isLoading && <View className={classes.wrapper}>{indicator}</View>}
+      {isLoading && (
+        <View className={classNames(classes.wrapper, wrapperClassName)}>
+          {indicator}
+        </View>
+      )}
     </View>
   );
 };

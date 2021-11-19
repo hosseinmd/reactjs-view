@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { AnchorView, AnchorViewProps } from "reactjs-view";
+import { AnchorView, AnchorViewProps, Text } from "reactjs-view";
 import { StoryContainer } from "../../container";
 
 export default {
@@ -15,5 +15,5 @@ const Template: Story<Omit<AnchorViewProps, "ref">> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: "قلی قلی پور",
+  children: <Text> قلی قلی پور</Text>,
 };
