@@ -3,11 +3,7 @@ import { View, ViewProps } from "../../atoms/view";
 import { Loader } from "./loader";
 import useStyles from "./styles";
 
-let defaultLoader = <Loader />;
-
-function setDefaultIndicator(indicator: JSX.Element) {
-  defaultLoader = indicator;
-}
+const defaultLoader = <Loader />;
 export interface LoadingViewProps extends ViewProps {
   // size?: "small" | "large" | "default";
   // color?: string;
@@ -25,6 +21,7 @@ export interface LoadingViewProps extends ViewProps {
   tip?: string | undefined;
   delay?: number | undefined;
   wrapperClassName?: string | undefined;
+  indicator?: JSX.Element;
 }
 
 const LoadingView = ({
@@ -37,6 +34,7 @@ const LoadingView = ({
   tip,
   delay,
   wrapperClassName,
+  indicator = defaultLoader,
   ...rest
 }: LoadingViewProps) => {
   const classes = useStyles();
@@ -44,11 +42,9 @@ const LoadingView = ({
   return (
     <View {...rest}>
       {(!isLoading || !isLazy) && children}
-      {isLoading && <View className={classes.wrapper}>{defaultLoader}</View>}
+      {isLoading && <View className={classes.wrapper}>{indicator}</View>}
     </View>
   );
 };
-
-LoadingView.setDefaultIndicator = setDefaultIndicator;
 
 export { LoadingView };
