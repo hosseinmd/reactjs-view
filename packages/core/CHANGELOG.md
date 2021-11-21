@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/hosseinmd/reactjs-view/compare/v0.2.2...v0.3.0) (2021-11-21)
+
+
+### Features
+
+* add useInteractions hook ([c6620c0](https://github.com/hosseinmd/reactjs-view/commit/c6620c0b89b3fd498d60d90a721550f742e3170c))
+
+
+
+
+
 # [0.2.0](https://github.com/hosseinmd/reactjs-view/compare/v0.1.2...v0.2.0) (2021-11-19)
 
 **Note:** Version bump only for package reactjs-view-core
