@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/hosseinmd/reactjs-view/compare/v0.3.0...v0.3.1) (2021-11-22)
+
+
+### Bug Fixes
+
+* coreModules index ([048498e](https://github.com/hosseinmd/reactjs-view/commit/048498ec89b61ac2cebc098a280f19861ddc9c3a))
+
+
+
+
+
 # [0.3.0](https://github.com/hosseinmd/reactjs-view/compare/v0.2.2...v0.3.0) (2021-11-21)
 
 
