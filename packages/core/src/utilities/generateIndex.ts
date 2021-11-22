@@ -16,9 +16,9 @@ const getIndexes = (startIndex: number) => ({
 });
 
 const scopes = {
-  coreModule: getIndexes(0),
-  module: getIndexes(20000),
-  app: getIndexes(40000),
+  coreModule: getIndexes(20000),
+  module: getIndexes(40000),
+  app: getIndexes(60000),
 };
 
 export type Scope = keyof typeof scopes;
