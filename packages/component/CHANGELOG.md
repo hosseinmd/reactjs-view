@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/hosseinmd/reactjs-view/compare/v0.3.1...v0.3.2) (2021-11-22)
+
+
+### Bug Fixes
+
+* move jss devDependencies ([d17e2ca](https://github.com/hosseinmd/reactjs-view/commit/d17e2cac2f74f08e5b2f5cabc44bc272e4d51a7e))
+
+
+
+
+
 ## [0.3.1](https://github.com/hosseinmd/reactjs-view/compare/v0.3.0...v0.3.1) (2021-11-22)
 
 **Note:** Version bump only for package reactjs-view
