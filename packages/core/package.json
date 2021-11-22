@@ -15,5 +15,8 @@
     "compile": "tsc -b",
     "watch": "tsc -w",
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "@use-gesture/react": "^10.1.6"
   }
 }
