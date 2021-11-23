@@ -4665,17 +4665,17 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@use-gesture/core@10.1.5":
-  version "10.1.5"
-  resolved "https://registry.yarnpkg.com/@use-gesture/core/-/core-10.1.5.tgz#4b956bc8aa6354c20c668930c5cacb16fe4415e4"
-  integrity sha512-Kr3POvOFEfyHyC3MStavQdXdXg8Ys3elJBpxty9tFhNQwOC0+hK/ZHp9vABkre9PCBB/4rtk5Y2t0RG4YUhCpw==
+"@use-gesture/core@10.1.6":
+  version "10.1.6"
+  resolved "https://registry.yarnpkg.com/@use-gesture/core/-/core-10.1.6.tgz#7c1718fdd7fd1a513587ca01a567b06d56a56a12"
+  integrity sha512-19F0aaydRrCi6awVDSz/knY8dQFtYx5UeuRG+g2K880EJpOiKq2R70XBJSF8w2OAZBPmEugBF0RK9s+bw9tfDw==
 
-"@use-gesture/react@^10.1.5":
-  version "10.1.5"
-  resolved "https://registry.yarnpkg.com/@use-gesture/react/-/react-10.1.5.tgz#078d2c4f399e6451ee9ff169d447b543397d0e67"
-  integrity sha512-Lg3LcQa93MmBt+r2HzmtM+OCWsZ2oOE7jpwfHjXZGlhUWHnv5ZhLrtvNr8rAV2GlKRIjbF8q4BQmP7ahpIlZSQ==
+"@use-gesture/react@^10.1.6":
+  version "10.1.6"
+  resolved "https://registry.yarnpkg.com/@use-gesture/react/-/react-10.1.6.tgz#d30db22d4bd24741cd17862499d50970e1b77586"
+  integrity sha512-ZjUBxbsEVC+QmWvOLEieeCJW+mhfzMdQ0l7isDQyseW4CnhDzWfTPlihG0WHCQqZp0PwHWuPV/TMwrWij1e7aA==
   dependencies:
-    "@use-gesture/core" "10.1.5"
+    "@use-gesture/core" "10.1.6"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
