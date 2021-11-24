@@ -4,6 +4,7 @@ import jss from "jss";
 import * as React from "react";
 import { composeRef, useElementLayout } from "reactjs-view-core";
 import { flattenStyle } from "../../atoms";
+import { useThemes } from "../../molecules/text/styles";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 
@@ -43,6 +44,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       blurOnSubmit,
       clearTextOnFocus,
       dir,
+      theme = "regular-fa",
       editable = true,
       keyboardType = "default",
       multiline = false,
@@ -70,6 +72,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
   ) => {
     let type: React.InputHTMLAttributes<HTMLInputElement>["type"];
     let inputMode: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+    const themes = useThemes();
 
     switch (keyboardType) {
       case "email-address":
@@ -277,7 +280,11 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
     supportedProps.autoCorrect = autoCorrect ? "on" : "off";
-    supportedProps.className = classNames(classes.textinput, className);
+    supportedProps.className = classNames(
+      classes.textinput,
+      themes[theme],
+      className,
+    );
     // 'auto' by default allows browsers to infer writing direction
     supportedProps.dir = dir !== undefined ? dir : "auto";
     supportedProps.enterKeyHint = returnKeyType;
@@ -318,7 +325,7 @@ const classes = jss
       border: "0 solid black",
       borderRadius: 0,
       boxSizing: "border-box",
-      font: "14px System",
+      fontSize: 14,
       margin: 0,
       padding: 0,
       resize: "none",

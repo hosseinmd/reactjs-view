@@ -9,9 +9,11 @@
 
 import React from "react";
 import { ViewProps } from "../../atoms";
+import { TextProps } from "../../molecules";
 
 export interface TextInputProps extends Omit<ViewProps, "autoCorrect"> {
   autoCapitalize?: "characters" | "none" | "sentences" | "words";
+  theme?: TextProps["theme"];
   autoComplete?: string;
   autoCompleteType?: string; // Compat with React Native (Bug react-native#26003)
   autoCorrect?: boolean;

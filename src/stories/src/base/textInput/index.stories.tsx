@@ -19,14 +19,14 @@ const Template: Story<TextInputProps> = (args) => (
 export const Regular = Template.bind({});
 
 Regular.args = {
-  placeholder: "placeholder",
+  placeholder: "متن پس زمینه",
   placeholderTextColor: "red",
 };
 
 export const Multiline = Template.bind({});
 
 Multiline.args = {
-  placeholder: "placeholder",
+  placeholder: "متن پس زمینه",
   numberOfLines: 2,
   multiline: true,
 };
