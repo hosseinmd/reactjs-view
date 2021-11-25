@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/hosseinmd/reactjs-view/compare/v0.5.0...v0.5.1) (2021-11-25)
+
+
+### Bug Fixes
+
+* handle onClick and onPress both ([fbab979](https://github.com/hosseinmd/reactjs-view/commit/fbab979d5fb9229e0dcda373352f3a56be9a3e16))
+* input type ([fb26bfa](https://github.com/hosseinmd/reactjs-view/commit/fb26bfad6c459d4ee1c46f7962cdfb758012a4e6))
+
+
+
+
+
 # [0.5.0](https://github.com/hosseinmd/reactjs-view/compare/v0.4.0...v0.5.0) (2021-11-24)
 
 
