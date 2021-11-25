@@ -66,5 +66,5 @@ export interface TextInputProps extends Omit<ViewProps, "autoCorrect"> {
   selectionColor?: string;
   spellCheck?: boolean;
   style?: React.CSSProperties;
-  value?: string;
+  value?: string | number;
 }
