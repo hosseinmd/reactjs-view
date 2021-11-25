@@ -43,9 +43,10 @@ const View = forwardRef<HTMLDivElement, ViewProps>(
 
     const handleClick = React.useCallback(
       (e) => {
-        if (onClick != null) {
+        if (onClick) {
           onClick(e);
-        } else if (onPress != null) {
+        }
+        if (onPress) {
           e.stopPropagation();
           onPress(e);
         }
