@@ -1,9 +1,8 @@
 {
   "packages": [
-    "packages/component",
-    "packages/core",
-    "packages/asset",
-    "src/web",
+    "src/component",
+    "src/core",
+    "src/asset",
     "src/stories"
   ],
   "npmClient": "yarn",

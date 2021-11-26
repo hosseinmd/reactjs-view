@@ -1,4 +1,4 @@
-const configOverrides = require("../src/web/config-overrides");
+const configOverrides = require("../config-overrides");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],

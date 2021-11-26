@@ -13,7 +13,6 @@
     "outDir": "./dist",
     "rootDirs": [
       "./src",
-      "./packages"
     ],
     "removeComments": true,
     "noImplicitAny": true,

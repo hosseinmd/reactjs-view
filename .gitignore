@@ -1,7 +1,6 @@
 # binaries
 dist/
 node_modules/
-.env
 # production
 build/
 storybook-static/

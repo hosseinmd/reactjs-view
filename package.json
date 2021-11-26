@@ -5,25 +5,22 @@
   "description": "React-native View implementation for web",
   "workspaces": {
     "packages": [
-      "packages/component",
-      "packages/core",
-      "packages/asset",
-      "src/web",
+      "src/component",
+      "src/core",
+      "src/asset",
       "src/stories"
     ]
   },
   "scripts": {
     "compile": "tsc -b",
-    "start": "concurrently \"yarn workspace web watch\" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
-    "build": "yarn lerna-clean && yarn lerna-build && yarn workspace web build",
+    "build": "yarn lerna-clean && yarn lerna-build",
     "lint": "eslint . --ext tsx,ts  --fix",
     "lint-commit": "cross-env COMMIT=true eslint . --ext tsx,ts  --fix",
-    "test": "yarn lerna-clean && yarn lerna-build && yarn workspace web test",
+    "test": "yarn lerna-clean && yarn lerna-build && react-app-rewired test --silent --detectOpenHandles",
     "prettierAll": "prettier --write .",
-    "storybook": "concurrently \"start-storybook --no-manager-cache -p 6006 -s src/web/public\" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
-    "build-storybook": "yarn lerna-clean && yarn lerna-build && build-storybook -s src/web/public",
-    "zeplin": "zeplin connect",
-    "release": "yarn lerna-clean && yarn lerna-build && yarn lint-commit && yarn compile && yarn workspace web test -- --watchAll=false --silent && npx lerna publish",
+    "storybook": "concurrently \"start-storybook --no-manager-cache -p 6006 -s \" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
+    "build-storybook": "yarn lerna-clean && yarn lerna-build && build-storybook -s",
+    "release": "yarn lerna-clean && yarn lerna-build && yarn lint-commit && yarn compile && react-app-rewired test --silent --watchAll=false && npx lerna publish",
     "lerna-build": "lerna run compile --stream",
     "lerna-clean": "lerna run clean --parallel"
   },
@@ -33,6 +30,7 @@
     "@types/node": "^15.0.2",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.0",
+    "@types/jest": "^27.0.3",
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
@@ -45,12 +43,17 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest-watch-typeahead": "^0.6.2",
+    "eslint-webpack-plugin": "^3.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "react-app-rewired": "^2.1.8",
+    "jest": "^27.3.1",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "prettier-plugin-jsdoc": "^0.3.24",
     "prettier-plugin-organize-imports": "^2.3.4",
-    "rimraf": "^3.0.2",
-    "sass-loader": "^12.3.0"
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "@sentry/browser": "^5.21.1",
@@ -78,7 +81,7 @@
   "author": "hosseinm.developer@gmail.com",
   "license": "ISC",
   "publishConfig": {
-    "registry": "http://192.168.1.48:8081/repository/plus-repository/"
+    "registry": "https://github.com/hosseinmd/reactjs-view"
   },
   "browserslist": {
     "production": [
