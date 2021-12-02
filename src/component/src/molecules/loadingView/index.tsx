@@ -14,6 +14,8 @@ export interface LoadingViewProps extends ViewProps {
    * @default true
    */
   isLazy?: boolean;
+  indicatorWrapperClassName?: string | undefined;
+  /** @deprecated Use indicatorWrapperClassName instead */
   wrapperClassName?: string | undefined;
   indicator?: JSX.Element;
 }
@@ -25,6 +27,7 @@ const LoadingView = ({
   isLoading,
   isLazy = true,
   wrapperClassName,
+  indicatorWrapperClassName = wrapperClassName,
   indicator = defaultLoader,
   ...rest
 }: LoadingViewProps) => {
@@ -36,7 +39,7 @@ const LoadingView = ({
       {isLoading && (
         <View
           testID={LoadingView.testIDs.loadingContainer}
-          className={classNames(classes.wrapper, wrapperClassName)}
+          className={classNames(classes.wrapper, indicatorWrapperClassName)}
         >
           {indicator}
         </View>
