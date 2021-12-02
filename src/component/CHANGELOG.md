@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/hosseinmd/reactjs-view/compare/v0.5.3...v0.5.4) (2021-12-02)
+
+
+### Bug Fixes
+
+* add testIDs LoadingView ([ed34674](https://github.com/hosseinmd/reactjs-view/commit/ed3467456640ba1930bef2baf37e23bf11d2cd0b))
+
+
+
+
+
 ## [0.5.3](https://github.com/hosseinmd/reactjs-view/compare/v0.5.2...v0.5.3) (2021-12-01)
 
 
