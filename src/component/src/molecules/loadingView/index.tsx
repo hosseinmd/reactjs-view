@@ -34,12 +34,20 @@ const LoadingView = ({
     <View {...rest}>
       {(!isLoading || !isLazy) && children}
       {isLoading && (
-        <View className={classNames(classes.wrapper, wrapperClassName)}>
+        <View
+          testID={LoadingView.testIDs.loadingContainer}
+          className={classNames(classes.wrapper, wrapperClassName)}
+        >
           {indicator}
         </View>
       )}
     </View>
   );
+};
+
+LoadingView.displayName = "LoadingView";
+LoadingView.testIDs = {
+  loadingContainer: "loadingContainer",
 };
 
 export { LoadingView };
