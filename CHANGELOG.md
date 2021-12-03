@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/hosseinmd/reactjs-view/compare/v0.5.4...v0.5.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* loading indicator position ([6de5d01](https://github.com/hosseinmd/reactjs-view/commit/6de5d0167766cbe92d8055cde2594423d72c4dc7))
+* rename wrapperClassName to indicatorWrapperClassName ([c981912](https://github.com/hosseinmd/reactjs-view/commit/c981912b029ee303f71279084a7fac95d291dc8d))
+
+
+
+
+
 ## [0.5.4](https://github.com/hosseinmd/reactjs-view/compare/v0.5.3...v0.5.4) (2021-12-02)
 
 
