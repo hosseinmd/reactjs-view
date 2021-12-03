@@ -17,6 +17,8 @@
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
   },
   "dependencies": {
-    "@use-gesture/react": "^10.1.6"
+    "@use-gesture/react": "^10.1.6",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^5.15.1"
   }
 }
