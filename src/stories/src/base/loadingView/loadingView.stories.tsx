@@ -9,7 +9,7 @@ export default {
 
 const Template: Story<LoadingViewProps> = (args) => (
   <StoryContainer>
-    <LoadingView {...args} style={{ flex: 1 }}>
+    <LoadingView {...args} style={{ flex: 1, width: 300 }}>
       <Text>
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
         از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
@@ -39,4 +39,5 @@ const Template: Story<LoadingViewProps> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   isLoading: true,
+  isLazy: false,
 };

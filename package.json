@@ -18,7 +18,7 @@
     "lint-commit": "cross-env COMMIT=true eslint . --ext tsx,ts  --fix",
     "test": "yarn lerna-clean && yarn lerna-build && react-app-rewired test --silent --detectOpenHandles",
     "prettierAll": "prettier --write .",
-    "storybook": "concurrently \"start-storybook --no-manager-cache -p 6006 -s \" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
+    "storybook": "concurrently \"start-storybook --no-manager-cache -p 6006 -s public \" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
     "build-storybook": "yarn lerna-clean && yarn lerna-build && build-storybook -s",
     "release": "yarn lerna-clean && yarn lerna-build && yarn lint-commit && yarn compile && react-app-rewired test --silent --watchAll=false && npx lerna publish",
     "lerna-build": "lerna run compile --stream",

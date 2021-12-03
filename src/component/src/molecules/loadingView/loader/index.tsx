@@ -1,3 +1,6 @@
+import classNames from "classnames";
+import { createUseStyles } from "react-jss";
+import { CommonStyles, generateIndex } from "reactjs-view-core";
 import { View } from "../../../atoms";
 
 interface LoaderProps {
@@ -70,9 +73,24 @@ export const Spin = ({ size = 0.6, color }: SpinProps) => {
 };
 
 export const Loader = ({ size = 0.6, color, className }: LoaderProps) => {
+  const classes = useStyles();
+
   return (
-    <View {...{ className }} style={{ flex: 1, height: 40 }}>
+    <View className={classNames(classes.loaderContainer, className)}>
       <Spin size={size} color={color} />
     </View>
   );
 };
+
+const useStyles = createUseStyles(
+  {
+    loaderContainer: {
+      flex: 1,
+      minHeight: 40,
+      ...CommonStyles.center,
+    },
+  },
+  {
+    index: generateIndex("molecules", "coreModule"),
+  },
+);
