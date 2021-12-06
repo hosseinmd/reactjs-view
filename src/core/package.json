@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view-core",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
@@ -17,8 +17,8 @@
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
   },
   "dependencies": {
-    "@use-gesture/react": "^10.1.6",
+    "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/jest-dom": "^5.15.1"
+    "@use-gesture/react": "^10.1.6"
   }
 }
