@@ -18,7 +18,8 @@ const Template: Story<TextProps> = (args) => (
 
 export const Regular = Template.bind({});
 Regular.args = {
-  children: "Text a Text",
+  lang: "fa",
+  children: "زبان فارسی 1256",
 };
 
 const FlexTemplate: Story<TextProps> = (args) => (
@@ -46,4 +47,12 @@ Ellipses.args = {
   title: "title",
   theme: "bold",
   numberOfLines: 2,
+};
+
+export const LanguageEnglish = FlexTemplate.bind({});
+LanguageEnglish.args = {
+  children: "Example Text 125",
+  title: "title",
+  lang: "en",
+  numberOfLines: 1,
 };

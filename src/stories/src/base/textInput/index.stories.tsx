@@ -26,6 +26,18 @@ Regular.args = {
 export const Multiline = Template.bind({});
 
 Multiline.args = {
+  theme: "bold",
+  lang: "en",
+  placeholder: "متن پس زمینه",
+  numberOfLines: 2,
+  multiline: true,
+};
+
+export const LanguageEnglish = Template.bind({});
+
+LanguageEnglish.args = {
+  theme: "bold",
+  lang: "en",
   placeholder: "متن پس زمینه",
   numberOfLines: 2,
   multiline: true,

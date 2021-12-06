@@ -32,7 +32,6 @@ export const fontSizes = {
 
 const useThemes = createUseStyles<
   | "medium"
-  | "bold"
   | "medium-fa"
   | "medium-en"
   | "regular"
@@ -41,6 +40,7 @@ const useThemes = createUseStyles<
   | "light"
   | "light-en"
   | "light-fa"
+  | "bold"
   | "bold-en"
   | "bold-fa"
 >(

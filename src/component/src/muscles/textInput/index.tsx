@@ -44,7 +44,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       blurOnSubmit,
       clearTextOnFocus,
       dir,
-      theme = "regular-fa",
+      theme = "regular",
+      lang,
       editable = true,
       keyboardType = "default",
       multiline = false,
@@ -282,7 +283,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     supportedProps.autoCorrect = autoCorrect ? "on" : "off";
     supportedProps.className = classNames(
       classes.textinput,
-      themes[theme],
+      themes[`${theme}${lang ? `-${lang}` : ""}` as keyof typeof themes],
       className,
     );
     // 'auto' by default allows browsers to infer writing direction
