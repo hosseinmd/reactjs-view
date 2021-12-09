@@ -27,6 +27,7 @@ type Style = 0 | false | undefined | CSSProperties | Style[];
 
 type Variant =
   | "div"
+  | "a"
   | "h1"
   | "h2"
   | "h3"
@@ -44,6 +45,7 @@ interface ViewProps
   className?: Parameters<typeof classNames>[0];
   style?: Style;
   testID?: string;
+  href?: string;
   variant?: Variant;
   onPress?: (e: any) => void;
 }
@@ -57,11 +59,13 @@ const View = forwardRef<HTMLElement, ViewProps>(
       onLayout,
       style,
       testID,
-      variant = "div",
+      href,
+      variant,
       ...rest
     },
     ref,
   ) => {
+    variant ||= href ? "a" : "div";
     const classes = useStyles();
     const contentLayoutRef = useRef<any>();
 

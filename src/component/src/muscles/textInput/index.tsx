@@ -288,7 +288,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     );
     // 'auto' by default allows browsers to infer writing direction
     supportedProps.dir = dir !== undefined ? dir : "auto";
-    supportedProps.enterKeyHint = returnKeyType;
+    (supportedProps as any).enterKeyHint = returnKeyType;
     supportedProps.onBlur = handleBlur;
     supportedProps.onChange = handleChange;
     supportedProps.onFocus = handleFocus;
@@ -299,7 +299,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
     supportedProps.style = style;
-    supportedProps.type = multiline ? undefined : type;
+    (supportedProps as React.InputHTMLAttributes<HTMLInputElement>).type = (
+      multiline ? undefined : type
+    ) as string;
     supportedProps.inputMode = inputMode;
 
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
@@ -310,7 +312,10 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     ) : (
-      <input ref={setRef} {...supportedProps} />
+      <input
+        ref={setRef}
+        {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
+      />
     );
   },
 );
