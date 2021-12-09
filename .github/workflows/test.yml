@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: Install project dependencies
+        run: yarn install
+      - name: yarn lint
+        run: yarn lint-commit
+      - name: yarn test -- --watchAll=false --silent
+        run: yarn test
+      - name: Typescript check
+        run: yarn compile
