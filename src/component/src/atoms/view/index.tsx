@@ -25,7 +25,7 @@ const useStyles = createUseStyles(
 
 type Style = 0 | false | undefined | CSSProperties | Style[];
 
-type Variant =
+export type Variant =
   | "div"
   | "a"
   | "h1"

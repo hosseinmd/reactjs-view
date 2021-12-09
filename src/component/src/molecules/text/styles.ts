@@ -28,6 +28,12 @@ export const fontSizes = {
   large: 18,
   xlarge: 20,
   xxlarge: 22,
+  h1: 32,
+  h2: 24,
+  h3: 18.7,
+  h4: 16,
+  h5: 13.2,
+  h6: 10.7,
 };
 
 const useThemes = createUseStyles<
