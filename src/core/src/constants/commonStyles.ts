@@ -33,6 +33,10 @@ const CommonStyles = {
     padding: 0,
     position: "relative",
     zIndex: 0,
+    marginBlockEnd: 0,
+    marginBlockStart: 0,
+    marginInlineEnd: 0,
+    marginInlineStart: 0,
   } as CSSProperties,
   horizontalScroll: {
     flexDirection: "row",

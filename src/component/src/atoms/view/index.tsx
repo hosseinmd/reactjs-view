@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { CSSProperties, forwardRef, useRef } from "react";
+import React, { createElement, CSSProperties, forwardRef, useRef } from "react";
 import { createUseStyles } from "react-jss";
 import {
   CommonStyles,
@@ -25,17 +25,43 @@ const useStyles = createUseStyles(
 
 type Style = 0 | false | undefined | CSSProperties | Style[];
 
+type Variant =
+  | "div"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "article"
+  | "p"
+  | "main"
+  | "section";
+
 interface ViewProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "className" | "style"> {
+  extends Omit<React.HTMLAttributes<HTMLElement>, "className" | "style"> {
   onLayout?: (e: LayoutEvent) => void;
   className?: Parameters<typeof classNames>[0];
   style?: Style;
   testID?: string;
+  variant?: Variant;
   onPress?: (e: any) => void;
 }
 
-const View = forwardRef<HTMLDivElement, ViewProps>(
-  ({ className, onPress, onClick, onLayout, style, testID, ...rest }, ref) => {
+const View = forwardRef<HTMLElement, ViewProps>(
+  (
+    {
+      className,
+      onPress,
+      onClick,
+      onLayout,
+      style,
+      testID,
+      variant = "div",
+      ...rest
+    },
+    ref,
+  ) => {
     const classes = useStyles();
     const contentLayoutRef = useRef<any>();
 
@@ -54,20 +80,20 @@ const View = forwardRef<HTMLDivElement, ViewProps>(
       [onClick, onPress],
     );
 
-    return (
-      <div
-        ref={composeRef(contentLayoutRef, ref)}
-        className={classNames(
-          classes.container,
-          onPress && classes.pressable,
-          className,
-        )}
-        style={flattenStyle(style)}
-        onClick={onClick || onPress ? handleClick : undefined}
-        data-testid={testID}
-        {...rest}
-      />
-    );
+    const Element = createElement(variant, {
+      ref: composeRef(contentLayoutRef, ref),
+      className: classNames(
+        classes.container,
+        onPress && classes.pressable,
+        className,
+      ),
+      style: flattenStyle(style),
+      onClick: onClick || onPress ? handleClick : undefined,
+      "data-testid": testID,
+      ...rest,
+    });
+
+    return Element;
   },
 );
 
