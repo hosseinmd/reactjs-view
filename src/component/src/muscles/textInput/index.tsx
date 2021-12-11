@@ -287,7 +287,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       className,
     );
     // 'auto' by default allows browsers to infer writing direction
-    supportedProps.dir = dir !== undefined ? dir : "auto";
     (supportedProps as any).enterKeyHint = returnKeyType;
     supportedProps.onBlur = handleBlur;
     supportedProps.onChange = handleChange;

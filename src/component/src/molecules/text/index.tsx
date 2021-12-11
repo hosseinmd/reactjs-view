@@ -43,12 +43,12 @@ const Text = React.memo(
       const fontWeight =
         typeof weight === "number" ? weight : fontWeights[weight];
 
-      const setVariant = React.useCallback((): Variant => {
+      const setVariant = (): Variant => {
         if (typeof size !== "number" && size?.match(/h(1|2|3|4|5|6)/g)) {
           return size as Variant;
         }
         return "p";
-      }, [size]);
+      };
 
       return (
         <BaseText
