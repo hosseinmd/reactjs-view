@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: Install project dependencies
+        run: yarn install
+      - name: yarn lint
+        run: yarn lint-commit
+      - name: yarn test -- --watchAll=false --silent
+        run: yarn test
+      - name: Typescript check
+        run: yarn compile
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN }}

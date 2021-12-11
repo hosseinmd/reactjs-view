@@ -3,10 +3,8 @@ const configOverrides = require("../config-overrides");
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/react",
     "storybook/addons",
     "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app",
     "@storybook/core-events",
     "@storybook/api",
   ],
