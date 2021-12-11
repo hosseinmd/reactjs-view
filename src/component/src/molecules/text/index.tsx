@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Variant } from "../../atoms/view";
 import { BaseText, BaseTextProps } from "./base";
 import { fontSizes, fontWeights, useThemes } from "./styles";
 
@@ -32,6 +33,7 @@ const Text = React.memo(
         style,
         size = "medium",
         weight = "medium",
+        variant,
         ...rest
       },
       ref,
@@ -41,9 +43,17 @@ const Text = React.memo(
       const fontWeight =
         typeof weight === "number" ? weight : fontWeights[weight];
 
+      const setVariant = (): Variant => {
+        if (typeof size !== "number" && size?.match(/h(1|2|3|4|5|6)/g)) {
+          return size as Variant;
+        }
+        return "p";
+      };
+
       return (
         <BaseText
           ref={ref}
+          variant={variant || setVariant()}
           className={[
             themes[`${theme}${lang ? `-${lang}` : ""}` as keyof typeof themes],
             className,
