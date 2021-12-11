@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/hosseinmd/reactjs-view/compare/v0.6.0...v0.7.0) (2021-12-11)
+
+
+### Bug Fixes
+
+* deploy github token ([6db6518](https://github.com/hosseinmd/reactjs-view/commit/6db6518eeb88b8c07d21bf342b58dfdff22bcaec))
+* remove article variant, fix h variant regex ([a16e8fe](https://github.com/hosseinmd/reactjs-view/commit/a16e8fef8741687aa034f3658a985a6c9c6e3234))
+* remove useCallback, and remove dir prop from textInput ([3535d22](https://github.com/hosseinmd/reactjs-view/commit/3535d22fa3f03c92909a9f7395fdcec15e59a03f))
+
+
+### Features
+
+* add semantic html tags as variant to View component ([eb905d0](https://github.com/hosseinmd/reactjs-view/commit/eb905d0baa85d2f4313ff6c51efd4afaee491655))
+* add useDebounce hook ([155a7c7](https://github.com/hosseinmd/reactjs-view/commit/155a7c7c80dacc4299fc286bcf1cb5ab12053af8))
+* add variants to Text component based on fontSize ([2e6f79b](https://github.com/hosseinmd/reactjs-view/commit/2e6f79b5b3504e2a0cc8dd12bc7b7ee306847f10))
+* export fonts to customize ([b3e78c9](https://github.com/hosseinmd/reactjs-view/commit/b3e78c93c1d309db5ff81cef8acb383e8c260e2b))
+
+
+
+
+
 # [0.6.0](https://github.com/hosseinmd/reactjs-view/compare/v0.5.5...v0.6.0) (2021-12-06)
 
 
