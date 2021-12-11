@@ -33,7 +33,6 @@ const Text = React.memo(
         style,
         size = "medium",
         weight = "medium",
-        numberOfLines,
         variant,
         ...rest
       },
@@ -45,17 +44,11 @@ const Text = React.memo(
         typeof weight === "number" ? weight : fontWeights[weight];
 
       const setVariant = React.useCallback((): Variant => {
-        if (typeof size !== "number" && size?.match(/<h(1|2|3|4|5|6).+?>/g)) {
+        if (typeof size !== "number" && size?.match(/h(1|2|3|4|5|6)/g)) {
           return size as Variant;
         }
-        if (numberOfLines && numberOfLines >= 3) {
-          return "article";
-        }
-        if (numberOfLines && numberOfLines < 3) {
-          return "p";
-        }
-        return variant || "div";
-      }, [numberOfLines, size, variant]);
+        return "p";
+      }, [size]);
 
       return (
         <BaseText
