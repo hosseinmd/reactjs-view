@@ -30,108 +30,85 @@ export const fontSizes = {
   xxlarge: 22,
 };
 
-const useThemes = createUseStyles<
-  | "medium"
-  | "medium-fa"
-  | "medium-en"
-  | "regular"
-  | "regular-fa"
-  | "regular-en"
-  | "light"
-  | "light-en"
-  | "light-fa"
-  | "bold"
-  | "bold-en"
-  | "bold-fa"
->(
-  {
-    medium: {
-      fontFamily: "yekanBakhMedium",
-    },
-    "medium-fa": {
-      fontFamily: "yekanBakhFaMedium",
-    },
-    "medium-en": {
-      fontFamily: "RobotoMedium",
-    },
-    regular: {
-      fontFamily: "yekanBakhRegular",
-    },
-    "regular-fa": {
-      fontFamily: "yekanBakhFaRegular",
-    },
-    "regular-en": {
-      fontFamily: "RobotoRegular",
-    },
-    light: {
-      fontFamily: "yekanBakhLight",
-    },
-    "light-en": {
-      fontFamily: "RobotoLight",
-    },
-    "light-fa": {
-      fontFamily: "yekanBakhFaLight",
-    },
-    bold: {
-      fontFamily: "yekanBakhBold",
-    },
-    "bold-en": {
-      fontFamily: "RobotoBold",
-    },
-    "bold-fa": {
-      fontFamily: "yekanBakhFaBold",
-    },
-    ["@font-face" as any]: [
-      {
-        fontFamily: "yekanBakhLight",
-        src: `url(${YekanBakhEnLight}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhRegular",
-        src: `url(${YekanBakhEnRegular}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhMedium",
-        src: `url(${YekanBakhEnMedium}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhBold",
-        src: `url(${YekanBakhEnBold}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhFaLight",
-        src: `url(${YekanBakhFaLight}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhFaRegular",
-        src: `url(${YekanBakhFaRegular}) format('woff')`,
-      },
+export const fonts = {
+  medium: {
+    name: "YekanBakhEnMedium",
+    url: YekanBakhEnMedium,
+    format: "woff",
+  },
+  "medium-fa": {
+    name: "YekanBakhFaMedium",
+    url: YekanBakhFaMedium,
+    format: "woff",
+  },
+  "medium-en": {
+    name: "RobotoMedium",
+    url: RobotoMedium,
+    format: "woff",
+  },
+  regular: {
+    name: "YekanBakhEnRegular",
+    url: YekanBakhEnRegular,
+    format: "woff",
+  },
+  "regular-fa": {
+    name: "YekanBakhFaRegular",
+    url: YekanBakhFaRegular,
+    format: "woff",
+  },
+  "regular-en": {
+    name: "RobotoRegular",
+    url: RobotoRegular,
+    format: "woff",
+  },
+  light: {
+    name: "YekanBakhEnLight",
+    url: YekanBakhEnLight,
+    format: "woff",
+  },
+  "light-en": {
+    name: "RobotoLight",
+    url: RobotoLight,
+    format: "woff",
+  },
+  "light-fa": {
+    name: "YekanBakhFaLight",
+    url: YekanBakhFaLight,
+    format: "woff",
+  },
+  bold: {
+    name: "YekanBakhEnBold",
+    url: YekanBakhEnBold,
+    format: "woff",
+  },
+  "bold-en": {
+    name: "RobotoBold",
+    url: RobotoBold,
+    format: "woff",
+  },
+  "bold-fa": {
+    name: "YekanBakhFaBold",
+    url: YekanBakhFaBold,
+    format: "woff",
+  },
+};
 
-      {
-        fontFamily: "yekanBakhFaMedium",
-        src: `url(${YekanBakhFaMedium}) format('woff')`,
-      },
-      {
-        fontFamily: "yekanBakhFaBold",
-        src: `url(${YekanBakhFaBold}) format('woff')`,
-      },
-      {
-        fontFamily: "RobotoRegular",
-        src: `url(${RobotoRegular}) format('woff')`,
-      },
-      {
-        fontFamily: "RobotoLight",
-        src: `url(${RobotoLight}) format('woff')`,
-      },
-      {
-        fontFamily: "RobotoMedium",
-        src: `url(${RobotoMedium}) format('woff')`,
-      },
-      {
-        fontFamily: "RobotoBold",
-        src: `url(${RobotoBold}) format('woff')`,
-      },
-    ],
+const useThemes = createUseStyles<keyof typeof fonts>(
+  {
+    ...(Object.fromEntries(
+      Object.entries(fonts).map(([key, { name }]) => [
+        key,
+        {
+          fontFamily: name,
+        },
+      ]),
+    ) as any),
+    ["@font-face" as any]: Object.values(fonts).map(
+      ({ format, name, url }) => ({
+        fontFamily: name,
+        src: `url(${url}) format('${format}')`,
+      }),
+    ),
   },
   { index: generateIndex("molecules", "coreModule") },
 );
