@@ -100,24 +100,32 @@ export const fonts = {
   },
 };
 
-const useThemes = createUseStyles<keyof typeof fonts>(
-  {
-    ...(Object.fromEntries(
-      Object.entries(fonts).map(([key, { name }]) => [
-        key,
-        {
-          fontFamily: name,
-        },
-      ]),
-    ) as any),
-    ["@font-face" as any]: Object.values(fonts).map(
-      ({ format, name, url }) => ({
-        fontFamily: name,
-        src: `url(${url}) format('${format}')`,
-      }),
-    ),
-  },
-  { index: generateIndex("molecules", "coreModule") },
-);
+let _useThemes: (() => Record<keyof typeof fonts, string>) | undefined;
+
+const useThemes = () => {
+  if (!_useThemes) {
+    _useThemes = createUseStyles<keyof typeof fonts>(
+      {
+        ...(Object.fromEntries(
+          Object.entries(fonts).map(([key, { name }]) => [
+            key,
+            {
+              fontFamily: name,
+            },
+          ]),
+        ) as any),
+        ["@font-face" as any]: Object.values(fonts).map(
+          ({ format, name, url }) => ({
+            fontFamily: name,
+            src: `url(${url}) format('${format}')`,
+          }),
+        ),
+      },
+      { index: generateIndex("molecules", "coreModule") },
+    );
+  }
+
+  return _useThemes();
+};
 
 export { useThemes };
