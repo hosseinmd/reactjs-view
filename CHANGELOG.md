@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/hosseinmd/reactjs-view/compare/v0.7.1...v0.7.2) (2021-12-12)
+
+
+### Bug Fixes
+
+* generate fonts ([ec74b3f](https://github.com/hosseinmd/reactjs-view/commit/ec74b3fd15f600e4ae03c0d469070b48285375d5))
+
+
+
+
+
 ## [0.7.1](https://github.com/hosseinmd/reactjs-view/compare/v0.7.0...v0.7.1) (2021-12-12)
 
 
