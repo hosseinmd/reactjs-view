@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/hosseinmd/reactjs-view/compare/v0.7.0...v0.7.1) (2021-12-12)
+
+
+### Bug Fixes
+
+* href iin View ([4a76b87](https://github.com/hosseinmd/reactjs-view/commit/4a76b87e78df39ac38214fccc89c49dc3f4c439f))
+
+
+
+
+
 # [0.7.0](https://github.com/hosseinmd/reactjs-view/compare/v0.6.0...v0.7.0) (2021-12-11)
 
 
