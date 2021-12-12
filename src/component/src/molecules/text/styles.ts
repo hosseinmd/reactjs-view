@@ -36,6 +36,7 @@ export const fontSizes = {
   h6: 10.7,
 };
 
+/** Change font before run any component */
 export const fonts = {
   medium: {
     name: "YekanBakhEnMedium",

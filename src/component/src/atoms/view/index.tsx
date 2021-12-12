@@ -85,6 +85,7 @@ const View = forwardRef<HTMLElement, ViewProps>(
     );
 
     const Element = createElement(variant, {
+      href,
       ref: composeRef(contentLayoutRef, ref),
       className: classNames(
         classes.container,

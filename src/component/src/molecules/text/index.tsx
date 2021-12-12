@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Variant } from "../../atoms/view";
 import { BaseText, BaseTextProps } from "./base";
-import { fontSizes, fontWeights, useThemes } from "./styles";
+import { fonts, fontSizes, fontWeights, useThemes } from "./styles";
 
 interface TextProps extends BaseTextProps {
   theme?: "medium" | "regular" | "light" | "bold";
@@ -66,5 +66,5 @@ const Text = React.memo(
   ),
 );
 
-export { Text };
+export { Text, fonts };
 export type { TextProps };
