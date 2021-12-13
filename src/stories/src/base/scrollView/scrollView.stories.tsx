@@ -9,14 +9,14 @@ export default {
 
 const Template: Story<ScrollViewProps> = (args) => (
   <StoryContainer>
-    <ScrollView {...args} style={{ flex: 1 }} />
+    <ScrollView {...args} style={{ flex: 1, height: 400 }} />
   </StoryContainer>
 );
 
 export const Regular = Template.bind({});
 Regular.args = {
   children: (
-    <View style={{ flex: 1, width: 500 }}>
+    <View style={{ width: 500 }}>
       <Text theme="regular" lang="fa" style={{ textAlign: "justify" }}>
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
         از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
