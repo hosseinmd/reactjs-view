@@ -13,7 +13,6 @@ const ESLintPlugin = require("eslint-webpack-plugin/");
 //   parser,
 // );
 
-
 module.exports = {
   // The Webpack config to use when compiling your react app for development or production.
   webpack: (config, env) => {
@@ -21,12 +20,9 @@ module.exports = {
       (plugin) => !(plugin instanceof ModuleScopePlugin),
     );
 
-
     const __DEV__ = env !== "production";
 
-    config.plugins.push(
-      new webpack.DefinePlugin({ __DEV__ }),
-    );
+    config.plugins.push(new webpack.DefinePlugin({ __DEV__ }));
 
     config.plugins = config.plugins.filter((v) => !(v instanceof ESLintPlugin));
 
@@ -55,10 +51,10 @@ module.exports = {
     //   "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
     //   "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}",
     // ]),
-    (config.setupFiles = [
+    config.setupFiles = [
       ...(config.setupFiles || []),
       path.join(__dirname, "./path/jestSetupFile.js"),
-    ]);
+    ];
     config.globals = {
       ...config.globals,
       __DEV__: true,

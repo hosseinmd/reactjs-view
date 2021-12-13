@@ -1,10 +1,5 @@
 {
-  "packages": [
-    "src/component",
-    "src/core",
-    "src/asset",
-    "src/stories"
-  ],
+  "packages": ["src/component", "src/core", "src/asset", "src/stories"],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {

@@ -12,12 +12,6 @@
     "rootDir": "./src",
     "noEmit": false
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/__test__"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/__test__"]
 }

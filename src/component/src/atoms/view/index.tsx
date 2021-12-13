@@ -16,6 +16,7 @@ const useStyles = createUseStyles(
     },
     pressable: {
       cursor: "pointer",
+      userSelect: "none",
     },
   },
   {
@@ -50,6 +51,30 @@ interface ViewProps
   onPress?: (e: any) => void;
 }
 
+/**
+ * Inspired from react-native View
+ *
+ * ```js
+ * import { View } from "reactjs-view";
+ *
+ * function MyComponent() {
+ *   return (
+ *     <View style={{ alignItems: "center" }}>
+ *       <View
+ *         variant="a"
+ *         href="/"
+ *         onPress={() => {
+ *           history.push("/");
+ *         }}
+ *         style={{ width: 300, height: 50 }}
+ *       >
+ *         <Text>Hello World</Text>
+ *       </View>
+ *     </View>
+ *   );
+ * }
+ * ```
+ */
 const View = forwardRef<HTMLElement, ViewProps>(
   (
     {
