@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "reactjs-view-asset": "^0.7.0",
-    "reactjs-view-core": "^0.7.1"
+    "reactjs-view-asset": "^0.7.3",
+    "reactjs-view-core": "^0.7.3"
   }
 }

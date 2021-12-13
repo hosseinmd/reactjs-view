@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/hosseinmd/reactjs-view/compare/v0.7.2...v0.7.3) (2021-12-13)
+
+
+### Bug Fixes
+
+* add userSelect: "none" when view is pressable ([b3e2bf4](https://github.com/hosseinmd/reactjs-view/commit/b3e2bf4310707e90482f6b54c02d08ad76f16b73))
+
+
+
+
+
 ## [0.7.1](https://github.com/hosseinmd/reactjs-view/compare/v0.7.0...v0.7.1) (2021-12-12)
 
 ### Bug Fixes
