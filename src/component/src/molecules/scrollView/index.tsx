@@ -26,7 +26,17 @@ export interface ScrollViewProps extends ViewProps {
 }
 
 const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
-  ({ isHorizontal, children, contentContainerClassName, ...rest }, ref) => {
+  (
+    {
+      isHorizontal,
+      children,
+      contentContainerClassName,
+      onScroll,
+      onScrollCapture,
+      ...rest
+    },
+    ref,
+  ) => {
     const classes = useStyle();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -50,6 +60,10 @@ const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
       <View {...rest} ref={ref}>
         <View
           ref={scrollContainerRef}
+          {...{
+            onScroll,
+            onScrollCapture,
+          }}
           className={classNames(
             isHorizontal ? classes.horizontalView : classes.verticalView,
             contentContainerClassName,
