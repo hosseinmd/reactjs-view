@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/hosseinmd/reactjs-view/compare/v0.7.3...v0.7.4) (2022-01-03)
+
+
+### Bug Fixes
+
+* scrollView  onscroll event ([28d995c](https://github.com/hosseinmd/reactjs-view/commit/28d995c4b9477cfc4d9f2883ff2bb16361fa1f83))
+
+
+
+
+
 ## [0.7.3](https://github.com/hosseinmd/reactjs-view/compare/v0.7.2...v0.7.3) (2021-12-13)
 
 
