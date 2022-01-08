@@ -90,7 +90,7 @@ const View = forwardRef<HTMLElement, ViewProps>(
     },
     ref,
   ) => {
-    variant ||= href ? "a" : "div";
+    variant = variant || (href ? "a" : "div");
     const classes = useStyles();
     const contentLayoutRef = useRef<any>();
 

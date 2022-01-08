@@ -3,15 +3,9 @@ const path = require("path");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 
 const ESLintPlugin = require("eslint-webpack-plugin/");
+const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
 
-// const parser = fs.readFileSync(
-//   path.resolve('./shim/react-docgen-typescript/lib/parser.js'),
-// );
-
-// fs.writeFileSync(
-//   path.resolve('../../node_modules/react-docgen-typescript/lib/parser.js'),
-//   parser,
-// );
+const appIncludes = [resolvePath("./src")];
 
 module.exports = {
   // The Webpack config to use when compiling your react app for development or production.
@@ -19,6 +13,11 @@ module.exports = {
     config.resolve.plugins = config.resolve.plugins.filter(
       (plugin) => !(plugin instanceof ModuleScopePlugin),
     );
+
+    config.module.rules[0].include = appIncludes;
+
+    const jsConfig = config.module.rules.find(({ include }) => include);
+    jsConfig.include = appIncludes;
 
     const __DEV__ = env !== "production";
 
