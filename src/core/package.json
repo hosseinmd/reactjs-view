@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view-core",
-  "version": "0.7.3",
+  "version": "0.7.5",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",

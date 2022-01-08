@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.5](https://github.com/hosseinmd/reactjs-view/compare/v0.7.4...v0.7.5) (2022-01-08)
+
+
+### Bug Fixes
+
+* server side useEffect ([12d61ef](https://github.com/hosseinmd/reactjs-view/commit/12d61ef2c811d6e90edcdd915dee34c2b4b4438a))
+
+
+
+
+
 ## [0.7.3](https://github.com/hosseinmd/reactjs-view/compare/v0.7.2...v0.7.3) (2021-12-13)
 
 
