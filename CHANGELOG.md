@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.7](https://github.com/hosseinmd/reactjs-view/compare/v0.7.6...v0.7.7) (2022-01-08)
+
+
+### Bug Fixes
+
+* compile to es6 ([db54a83](https://github.com/hosseinmd/reactjs-view/commit/db54a83a406b63897eedbc5aae2c18a8e29d4886))
+
+
+
+
+
 ## [0.7.6](https://github.com/hosseinmd/reactjs-view/compare/v0.7.5...v0.7.6) (2022-01-08)
 
 
