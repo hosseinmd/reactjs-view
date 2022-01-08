@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.6](https://github.com/hosseinmd/reactjs-view/compare/v0.7.5...v0.7.6) (2022-01-08)
+
+
+### Bug Fixes
+
+* add src to npm for nextjs ([bdaa897](https://github.com/hosseinmd/reactjs-view/commit/bdaa89799a8a4e93ca042afd33e6f34129e253d4))
+
+
+
+
+
 ## [0.7.5](https://github.com/hosseinmd/reactjs-view/compare/v0.7.4...v0.7.5) (2022-01-08)
 
 
