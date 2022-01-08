@@ -1,4 +1,5 @@
-import { RefObject, useLayoutEffect } from "react";
+import { RefObject } from "react";
+import { useIsomorphicLayoutEffect } from "../useIsomorphicLayoutEffect";
 
 const canUseDOM = !!(
   typeof window !== "undefined" &&
@@ -85,7 +86,7 @@ function useElementLayout(
 ) {
   const observer = getResizeObserver();
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const node = ref.current;
     if (node != null) {
       node[DOM_LAYOUT_HANDLER_NAME] = onLayout;
@@ -94,7 +95,7 @@ function useElementLayout(
 
   // Observing is done in a separate effect to avoid this effect running
   // when 'onLayout' changes.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const node = ref.current;
     if (node != null && observer != null) {
       if (typeof node[DOM_LAYOUT_HANDLER_NAME] === "function") {
