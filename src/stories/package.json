@@ -1,9 +1,9 @@
 {
   "name": "stories",
   "private": true,
-  "version": "0.7.8",
+  "version": "0.8.0",
   "dependencies": {
     "react-router-dom": "^6.0.2",
-    "reactjs-view": "^0.7.8"
+    "reactjs-view": "^0.8.0"
   }
 }
