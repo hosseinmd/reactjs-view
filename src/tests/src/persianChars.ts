@@ -4,6 +4,7 @@ import path from "path";
 function readRoot(resolver: (...dirs: string[]) => string) {
   return fs.readdirSync(resolver(""));
 }
+
 function recursiveChecker(
   componentDir: string,
   resolver: (...dirs: string[]) => string,
@@ -11,9 +12,22 @@ function recursiveChecker(
   const files = fs.readdirSync(resolver(componentDir));
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
+      if (
+        file === "__tests__" ||
+        file === "__mocks__" ||
+        file === "__snapshots__"
+      ) {
+        return;
+      }
+
       recursiveChecker(resolver(componentDir, file), resolver);
       return;
     }
+
+    if (/\.test\.tsx?$/g.test(file) && /\.d\.tsx?$/g.test(file)) {
+      return;
+    }
+
     const content = fs.readFileSync(resolver(componentDir, file)).toString();
 
     if (content.split("\n")[0].includes("//ignore-localize")) return;
