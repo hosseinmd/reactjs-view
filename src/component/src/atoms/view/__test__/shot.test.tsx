@@ -1,4 +1,4 @@
-import { shotTest } from "reactjs-view-core/src/tests";
+import { shotTest } from "reactjs-view-tests";
 import { View } from "../";
 
 shotTest(View, {

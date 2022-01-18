@@ -1,4 +1,4 @@
-import { mountTest } from "reactjs-view-core/src/tests/mountTest";
+import { mountTest } from "reactjs-view-tests";
 import { View } from "../";
 
 mountTest(View, {

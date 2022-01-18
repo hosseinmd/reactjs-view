@@ -1,6 +1,6 @@
 import fs from "fs";
 import { join, resolve } from "path";
-import { Scope } from "../utilities/generateIndex";
+import { Scope } from "reactjs-view-share";
 
 const components = [
   "atoms",

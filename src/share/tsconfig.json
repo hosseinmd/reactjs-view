@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ES6",
+    "module": "CommonJS",
     "composite": true,
     "declaration": true,
     "checkJs": false,
@@ -12,12 +12,6 @@
     "rootDir": "./src",
     "noEmit": false
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/__tests__"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

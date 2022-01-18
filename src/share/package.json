@@ -1,6 +1,6 @@
 {
-  "name": "reactjs-view-core",
-  "version": "0.7.5",
+  "name": "reactjs-view-share",
+  "version": "0.0.1",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
@@ -19,7 +19,6 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
-    "@use-gesture/react": "^10.1.6",
-    "reactjs-view-share": "^0.0.1"
+    "@use-gesture/react": "^10.1.6"
   }
 }
