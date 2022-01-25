@@ -4,6 +4,6 @@
   "version": "0.8.0",
   "dependencies": {
     "react-router-dom": "^6.0.2",
-    "reactjs-view": "^0.8.0"
+    "reactjs-view": "^1.0.0"
   }
 }

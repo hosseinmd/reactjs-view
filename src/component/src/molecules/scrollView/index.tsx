@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { forwardRef, useEffect, useRef } from "react";
 import { createUseStyles } from "react-jss";
-import { CommonStyles, generateIndex } from "reactjs-view-core";
+import { CommonStyles, composeRef, generateIndex } from "reactjs-view-core";
 import { View, ViewProps } from "../../atoms/view";
 
 const useStyle = createUseStyles(
@@ -22,21 +22,10 @@ const useStyle = createUseStyles(
 
 export interface ScrollViewProps extends ViewProps {
   isHorizontal?: boolean;
-  contentContainerClassName?: string;
 }
 
 const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
-  (
-    {
-      isHorizontal,
-      children,
-      contentContainerClassName,
-      onScroll,
-      onScrollCapture,
-      ...rest
-    },
-    ref,
-  ) => {
+  ({ isHorizontal, children, className, ...rest }, ref) => {
     const classes = useStyle();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -57,20 +46,15 @@ const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
     }, [isHorizontal]);
 
     return (
-      <View {...rest} ref={ref}>
-        <View
-          ref={scrollContainerRef}
-          {...{
-            onScroll,
-            onScrollCapture,
-          }}
-          className={classNames(
-            isHorizontal ? classes.horizontalView : classes.verticalView,
-            contentContainerClassName,
-          )}
-        >
-          {children}
-        </View>
+      <View
+        {...rest}
+        ref={composeRef(scrollContainerRef, ref)}
+        className={classNames(
+          isHorizontal ? classes.horizontalView : classes.verticalView,
+          className,
+        )}
+      >
+        {children}
       </View>
     );
   },
