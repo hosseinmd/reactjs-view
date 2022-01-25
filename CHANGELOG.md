@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/hosseinmd/reactjs-view/compare/v1.0.1...v1.0.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* move core to ts module ([0832cfe](https://github.com/hosseinmd/reactjs-view/commit/0832cfebe6896776163bf4e0d4fb3bcc6d5a72ad))
+
+
+
+
+
 ## [1.0.1](https://github.com/hosseinmd/reactjs-view/compare/v0.8.2...v1.0.1) (2022-01-25)
 
 
