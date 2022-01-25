@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/hosseinmd/reactjs-view/compare/v0.8.2...v1.0.1) (2022-01-25)
+
+
+### Bug Fixes
+
+* remove useless view of ScrollView ([9e25563](https://github.com/hosseinmd/reactjs-view/commit/9e25563bf66faef9d0b7c52e1c53ae592c66c66f))
+
+
+
+
+
 # [0.8.0](https://github.com/hosseinmd/reactjs-view/compare/v0.7.8...v0.8.0) (2022-01-18)
 
 **Note:** Version bump only for package stories

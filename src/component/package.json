@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "reactjs-view-asset": "^0.8.0",
-    "reactjs-view-core": "^0.8.0",
-    "reactjs-view-share": "^0.8.0"
+    "reactjs-view-asset": "^1.0.1",
+    "reactjs-view-core": "^1.0.1",
+    "reactjs-view-share": "^1.0.1"
   }
 }
