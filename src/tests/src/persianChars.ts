@@ -9,8 +9,6 @@ function recursiveChecker(
   componentDir: string,
   resolver: (...dirs: string[]) => string,
 ) {
-  const regex = /.(ts|js|tsx|jsx)$/;
-
   const files = fs.readdirSync(resolver(componentDir));
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
@@ -21,15 +19,17 @@ function recursiveChecker(
       ) {
         return;
       }
-      if (!regex.test(file)) {
-        return;
-      }
 
       recursiveChecker(resolver(componentDir, file), resolver);
       return;
     }
+    const regexCodeFiles = /.(ts|js|tsx|jsx)$/;
 
-    if (/\.test\.tsx?$/g.test(file) && /\.d\.tsx?$/g.test(file)) {
+    if (!regexCodeFiles.test(file)) {
+      return;
+    }
+
+    if (/\.(test|spec)\.(t|j)sx?$/g.test(file) && /\.d\.tsx?$/g.test(file)) {
       return;
     }
 
