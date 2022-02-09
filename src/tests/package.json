@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view-tests",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
