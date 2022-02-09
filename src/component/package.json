@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "react-jss": "^10.8.2",
-    "reactjs-view-tests": "^1.0.3"
+    "reactjs-view-tests": "^1.0.4"
   },
   "peerDependencies": {
     "react-jss": ">=10"
