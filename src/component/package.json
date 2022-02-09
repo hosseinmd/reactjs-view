@@ -17,7 +17,8 @@
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
   },
   "devDependencies": {
-    "react-jss": "^10.8.2"
+    "react-jss": "^10.8.2",
+    "reactjs-view-tests": "^1.0.1"
   },
   "peerDependencies": {
     "react-jss": ">=10"
