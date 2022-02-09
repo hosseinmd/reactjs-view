@@ -8,7 +8,11 @@ function recursiveChecker(
   componentDir: string,
   resolver: (...dirs: string[]) => string,
 ) {
-  const files = fs.readdirSync(resolver(componentDir));
+  const regex = /.(ts|js|tsx|jsx)$/;
+  const files = fs
+    .readdirSync(resolver(componentDir))
+    .filter((file) => regex.test(file));
+
   files.forEach((file) => {
     if (fs.lstatSync(resolver(componentDir, file)).isDirectory()) {
       recursiveChecker(resolver(componentDir, file), resolver);
