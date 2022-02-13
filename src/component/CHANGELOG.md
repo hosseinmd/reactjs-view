@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/hosseinmd/reactjs-view/compare/v1.0.4...v1.0.5) (2022-02-13)
+
+
+### Bug Fixes
+
+* testId ([a87b311](https://github.com/hosseinmd/reactjs-view/commit/a87b311d1d2f49a247a35279838f4ab58b2486e9))
+
+
+
+
+
 ## [1.0.4](https://github.com/hosseinmd/reactjs-view/compare/v1.0.3...v1.0.4) (2022-02-09)
 
 **Note:** Version bump only for package reactjs-view
