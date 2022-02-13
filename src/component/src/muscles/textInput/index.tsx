@@ -71,6 +71,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       spellCheck,
       className,
       style: styleProps,
+      testID,
       ...rest
     },
     forwardedRef,
@@ -306,6 +307,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       multiline ? undefined : type
     ) as string;
     supportedProps.inputMode = inputMode;
+    //@ts-ignore
+    supportedProps["data-testid"] = testID;
 
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
