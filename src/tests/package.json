@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view-tests",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
@@ -19,6 +19,6 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
-    "reactjs-view-share": "^1.0.1"
+    "reactjs-view-share": "^1.0.6"
   }
 }
