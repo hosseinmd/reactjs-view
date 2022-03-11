@@ -31,17 +31,19 @@ const Text = React.memo(
         className,
         color,
         style,
-        size = "medium",
-        weight = "medium",
+        size,
+        weight,
         variant,
         ...rest
       },
       ref,
     ) => {
       const themes = useThemes();
-      const fontSize = typeof size === "number" ? size : fontSizes[size];
+
+      const fontSize = typeof size === "string" ? fontSizes[size] : size;
+
       const fontWeight =
-        typeof weight === "number" ? weight : fontWeights[weight];
+        typeof weight === "string" ? fontWeights[weight] : weight;
 
       const setVariant = (): Variant => {
         if (typeof size !== "number" && size?.match(/h(1|2|3|4|5|6)/g)) {

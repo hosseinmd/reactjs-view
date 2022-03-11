@@ -1,4 +1,5 @@
-import { mountTest } from "reactjs-view-tests";
+import { shotTest } from "reactjs-view-tests";
 import { Text } from "../";
 
-mountTest(Text);
+shotTest(Text, { size: 16 });
+shotTest(Text, { size: "small" });
