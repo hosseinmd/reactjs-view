@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://github.com/hosseinmd/reactjs-view/compare/v1.0.7...v1.0.8) (2022-04-11)
+
+
+### Bug Fixes
+
+* textInput style index ([403bda1](https://github.com/hosseinmd/reactjs-view/commit/403bda1163895c54fa85d53f31eb0e00b81d2c80))
+
+
+
+
+
 ## [1.0.7](https://github.com/hosseinmd/reactjs-view/compare/v1.0.6...v1.0.7) (2022-03-11)
 
 
