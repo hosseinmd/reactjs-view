@@ -4,6 +4,7 @@ import jss from "jss";
 import * as React from "react";
 import {
   composeRef,
+  generateIndex,
   useElementLayout,
   useIsomorphicLayoutEffect,
 } from "reactjs-view-core";
@@ -329,20 +330,25 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
 TextInput.displayName = "TextInput";
 
 const classes = jss
-  .createStyleSheet({
-    textinput: {
-      MozAppearance: "textfield",
-      WebkitAppearance: "none",
-      backgroundColor: "transparent",
-      border: "0 solid black",
-      borderRadius: 0,
-      boxSizing: "border-box",
-      fontSize: 14,
-      margin: 0,
-      padding: 0,
-      resize: "none",
+  .createStyleSheet(
+    {
+      textinput: {
+        MozAppearance: "textfield",
+        WebkitAppearance: "none",
+        backgroundColor: "transparent",
+        border: "0 solid black",
+        borderRadius: 0,
+        boxSizing: "border-box",
+        fontSize: 14,
+        margin: 0,
+        padding: 0,
+        resize: "none",
+      },
     },
-  })
+    {
+      index: generateIndex("muscles", "coreModule"),
+    },
+  )
   .attach().classes;
 
 export type { TextInputProps };
