@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/hosseinmd/reactjs-view/compare/v1.0.8...v1.0.9) (2022-04-20)
+
+
+### Bug Fixes
+
+* type ([9817a76](https://github.com/hosseinmd/reactjs-view/commit/9817a76d2e81a1e97870a5f46d7c951833074f6b))
+
+
+
+
+
 ## [1.0.8](https://github.com/hosseinmd/reactjs-view/compare/v1.0.7...v1.0.8) (2022-04-11)
 
 
