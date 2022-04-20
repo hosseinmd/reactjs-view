@@ -97,7 +97,7 @@ const View = forwardRef<HTMLElement, ViewProps>(
     useElementLayout(contentLayoutRef, onLayout);
 
     const handleClick = React.useCallback(
-      (e) => {
+      (e: any) => {
         if (onClick) {
           onClick(e);
         }

@@ -6,7 +6,6 @@
     "declaration": true,
     "checkJs": false,
     "isolatedModules": true,
-    "noImplicitAny": false,
     "noUnusedLocals": false,
     "outDir": "./dist",
     "rootDir": "./src",

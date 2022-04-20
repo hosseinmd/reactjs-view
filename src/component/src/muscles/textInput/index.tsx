@@ -114,7 +114,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const hostRef = React.useRef(null);
 
     const handleContentSizeChange = React.useCallback(
-      (hostNode) => {
+      (hostNode: any) => {
         if (multiline && onContentSizeChange && hostNode != null) {
           const newHeight = hostNode.scrollHeight;
           const newWidth = hostNode.scrollWidth;
