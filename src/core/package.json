@@ -17,8 +17,8 @@
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "@use-gesture/react": "^10.1.6",
     "reactjs-view-share": "^1.0.6"
   }
