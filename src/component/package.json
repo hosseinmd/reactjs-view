@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "main": "src/index.ts",
   "types": "src/index.ts",
