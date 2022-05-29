@@ -1,5 +1,11 @@
 import classNames from "classnames";
-import React, { createElement, CSSProperties, forwardRef, useRef } from "react";
+import React, {
+  createElement,
+  CSSProperties,
+  forwardRef,
+  ReactNode,
+  useRef,
+} from "react";
 import { createUseStyles } from "react-jss";
 import {
   CommonStyles,
@@ -41,13 +47,17 @@ export type Variant =
   | "section";
 
 interface ViewProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "className" | "style"> {
+  extends Omit<
+    React.HTMLAttributes<HTMLElement>,
+    "className" | "style" | "children"
+  > {
   onLayout?: (e: LayoutEvent) => void;
   className?: Parameters<typeof classNames>[0];
   style?: Style;
   testID?: string;
   href?: string;
   variant?: Variant;
+  children?: ReactNode | ReactNode[] | null;
   onPress?: (e: any) => void;
 }
 
