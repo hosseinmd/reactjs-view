@@ -2,13 +2,18 @@
   "compilerOptions": {
     "target": "ES2017",
     "module": "CommonJS",
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDirs": ["./src"],
+    "rootDirs": [
+      "./src"
+    ],
     "removeComments": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
@@ -23,5 +28,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "**/dist/",
+    "**/__tests__/"
+  ],
 }
