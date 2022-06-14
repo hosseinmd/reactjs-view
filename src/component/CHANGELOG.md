@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.12](https://github.com/hosseinmd/reactjs-view/compare/v1.0.11...v1.0.12) (2022-06-14)
+
+**Note:** Version bump only for package reactjs-view
+
+
+
+
+
 ## [1.0.11](https://github.com/hosseinmd/reactjs-view/compare/v1.0.10...v1.0.11) (2022-05-29)
 
 
