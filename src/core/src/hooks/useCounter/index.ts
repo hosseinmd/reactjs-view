@@ -11,14 +11,12 @@ import {
 type Options = {
   step?: number;
   interval?: number;
+  start: number;
+  end: number;
+  onComplete?: () => void;
 };
 
-export const useCounter = (
-  start: number,
-  end: number,
-  onComplete?: () => void,
-  options?: Options,
-) => {
+export const useCounter = ({ start, end, onComplete, ...options }: Options) => {
   const intervalHandle = useRef<any>();
   const [{ canStart, count, isCounting }, dispatch] = useReducer(
     reducer,
