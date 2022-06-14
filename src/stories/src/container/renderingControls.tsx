@@ -4,7 +4,7 @@ const RenderingControls = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>) => {
   const [key, setKey] = useState(1);
-  const [_, setRerender] = useState(1);
+  const [, setRerender] = useState(1);
 
   return (
     <div key={key}>
