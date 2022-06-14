@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/hosseinmd/reactjs-view/compare/v1.0.12...v1.1.0) (2022-06-14)
+
+
+### Features
+
+* add hooks stories ([4b3ce4c](https://github.com/hosseinmd/reactjs-view/commit/4b3ce4cf2bf9c1e8735f76ab13a4b792edf54d7d))
+
+
+
+
+
 ## [1.0.12](https://github.com/hosseinmd/reactjs-view/compare/v1.0.11...v1.0.12) (2022-06-14)
 
 **Note:** Version bump only for package stories
