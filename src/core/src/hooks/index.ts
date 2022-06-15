@@ -3,7 +3,6 @@ export * from "./useDebounce";
 export * from "./useElementLayout";
 export * from "./useEvent";
 export * from "./useInteractions";
-export * from "./useIsomorphicLayoutEffect";
 export * from "./useObserveElement";
 export * from "./useThrottle";
 export * from "./useTitle";
