@@ -2,12 +2,7 @@
 import classNames from "classnames";
 import jss from "jss";
 import * as React from "react";
-import {
-  composeRef,
-  generateIndex,
-  useElementLayout,
-  useIsomorphicLayoutEffect,
-} from "reactjs-view-core";
+import { composeRef, generateIndex, useElementLayout } from "reactjs-view-core";
 import { flattenStyle } from "../../atoms";
 import { useThemes } from "../../molecules/text/styles";
 import TextInputState from "./TextInputState";
@@ -262,7 +257,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
         }
       };
 
-    useIsomorphicLayoutEffect(() => {
+    React.useEffect(() => {
       const node = hostRef.current;
       if (node && selection) {
         setSelection(node, selection);
