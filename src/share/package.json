@@ -1,6 +1,6 @@
 {
   "name": "reactjs-view-share",
-  "version": "1.0.10",
+  "version": "1.2.0",
   "private": false,
   "sideEffects": false,
   "main": "src/index.ts",
@@ -15,6 +15,5 @@
     "compile": "tsc -b",
     "watch": "tsc -w",
     "clean": "rimraf ./dist && rimraf  tsconfig.tsbuildinfo"
-  },
-  "dependencies": {}
+  }
 }

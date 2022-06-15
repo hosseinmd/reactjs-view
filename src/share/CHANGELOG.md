@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/hosseinmd/reactjs-view/compare/v1.1.0...v1.2.0) (2022-06-15)
+
+
+### Features
+
+* add spaceView ([121e8ba](https://github.com/hosseinmd/reactjs-view/commit/121e8ba06f2516703d63c7a2c7f2cb5c41ee28c2))
+
+
+
+
+
 ## [1.0.10](https://github.com/hosseinmd/reactjs-view/compare/v1.0.9...v1.0.10) (2022-05-29)
 
 
