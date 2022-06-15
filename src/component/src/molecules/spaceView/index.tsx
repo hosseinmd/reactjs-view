@@ -1,5 +1,5 @@
 import { Children, CSSProperties, forwardRef } from "react";
-import { View, ViewProps } from "reactjs-view";
+import { View, ViewProps } from "../../atoms";
 
 export interface SpaceViewProps extends ViewProps {
   children?: React.ReactNode;
