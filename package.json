@@ -21,54 +21,61 @@
     "lint-commit": "cross-env COMMIT=true eslint . --ext tsx,ts  --fix",
     "test": "yarn build && react-app-rewired test --silent --detectOpenHandles",
     "prettierAll": "prettier --write .",
-    "storybook": "concurrently \"start-storybook --no-manager-cache -p 6006 -s public \" \"yarn workspace reactjs-view watch\" \"yarn workspace reactjs-view-share watch\" \"yarn workspace reactjs-view-core watch\" --kill-others",
+    "storybook": "start-storybook -p 6006 -s public",
     "storybook-build": "yarn build && build-storybook -s public",
     "release": "yarn build && yarn lint-commit && yarn compile && react-app-rewired test --silent --watchAll=false && npx lerna publish",
     "lerna-build": "lerna run compile --stream",
     "lerna-clean": "lerna run clean --parallel",
     "predeploy": "yarn storybook-build",
-    "deploy": "gh-pages -d storybook-static"
+    "deploy": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^14.1.0",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^15.0.2",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
-    "commitlint": "^14.1.0",
-    "concurrently": "^5.3.0",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@faker-js/faker": "^7.2.0",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/node-logger": "^6.5.9",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^17.0.43",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "commitlint": "^17.0.2",
+    "concurrently": "^7.2.2",
     "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.5.12",
     "eslint-webpack-plugin": "^3.1.1",
-    "jest": "^27.3.1",
-    "jest-watch-typeahead": "^0.6.2",
-    "lerna": "^4.0.0",
-    "prettier": "^2.2.1",
-    "prettier-plugin-jsdoc": "^0.3.30",
+    "jest": "^28.1.1",
+    "jest-watch-typeahead": "^1.1.0",
+    "lerna": "^5.1.2",
+    "prettier": "^2.7.0",
+    "prettier-plugin-jsdoc": "^0.3.38",
     "prettier-plugin-organize-imports": "^2.3.4",
     "react": "^18.1.0",
-    "react-app-rewired": "^2.1.8",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.1.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@sentry/browser": "^5.21.1",
-    "@storybook/addon-docs": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addons": "^6.4.9",
-    "@storybook/api": "^6.4.9",
-    "@storybook/core-events": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "react-test-renderer": "^17.0.2",
-    "typescript": "^4.3.5"
+    "@sentry/browser": "^7.1.1",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^4.7.3"
   },
   "keywords": [],
   "author": "hosseinm.developer@gmail.com",
@@ -86,6 +93,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   }
 }

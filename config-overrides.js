@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const path = require("path");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 
-const ESLintPlugin = require("eslint-webpack-plugin/");
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
 
 const appIncludes = [resolvePath("./src")];
@@ -14,16 +13,14 @@ module.exports = {
       (plugin) => !(plugin instanceof ModuleScopePlugin),
     );
 
-    config.module.rules[0].include = appIncludes;
+    // config.module.rules[0].include = appIncludes;
 
-    const jsConfig = config.module.rules.find(({ include }) => include);
-    jsConfig.include = appIncludes;
+    // const jsConfig = config.module.rules.find(({ include }) => include);
+    // jsConfig.include = appIncludes;
 
     const __DEV__ = env !== "production";
 
     config.plugins.push(new webpack.DefinePlugin({ __DEV__ }));
-
-    config.plugins = config.plugins.filter((v) => !(v instanceof ESLintPlugin));
 
     return config;
   },
