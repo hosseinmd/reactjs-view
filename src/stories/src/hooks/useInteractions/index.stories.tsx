@@ -13,14 +13,18 @@ const commonStyle = {
 };
 
 const Demo = () => {
-  const { eventHandlers, isHovered, isActive, isTabFocused } =
+  const { eventHandlers, isHovered, isActive, isTabFocused, isFocused } =
     useInteractions();
 
   return (
     <>
       <pre>
         <code>
-          {JSON.stringify({ isHovered, isActive, isTabFocused }, null, 4)}
+          {JSON.stringify(
+            { isHovered, isActive, isTabFocused, isFocused },
+            null,
+            4,
+          )}
         </code>
         <div
           tabIndex={1}

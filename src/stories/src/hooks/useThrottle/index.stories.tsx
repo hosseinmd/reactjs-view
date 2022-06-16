@@ -15,7 +15,7 @@ const Demo = ({ delay }: DemoProps) => {
   return (
     <>
       <pre>
-        <code>{JSON.stringify({ delay }, null, 4)}</code>
+        <code>{JSON.stringify({ throttledValue, inputValue }, null, 4)}</code>
       </pre>
       <input
         value={inputValue}
@@ -27,7 +27,6 @@ const Demo = ({ delay }: DemoProps) => {
           outline: "none",
         }}
       />
-      <p>{throttledValue || "Initial value"}</p>
     </>
   );
 };
@@ -43,7 +42,6 @@ const meta: Meta<DemoProps> = {
   component: DemoWithControls,
   argTypes: {
     delay: {
-      defaultValue: 5000,
       description: "Delay to wait to throttle",
       type: "number",
     },
@@ -57,4 +55,6 @@ export default meta;
 
 const Template: Story<DemoProps> = (args) => <DemoWithControls {...args} />;
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  delay: 5000,
+};

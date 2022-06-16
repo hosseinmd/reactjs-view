@@ -4,13 +4,13 @@ import { RenderingControls } from "../../container/renderingControls";
 
 type DemoProps = { title: Parameters<typeof useTitle>[0] };
 
-const Demo = (props: { title: Parameters<typeof useTitle>[0] }) => {
-  useTitle(props.title);
+const Demo = ({ title }: { title: Parameters<typeof useTitle>[0] }) => {
+  useTitle(title);
 
   return (
     <>
       <pre>
-        <code>{JSON.stringify(props, null, 4)}</code>
+        <code>{JSON.stringify({ title }, null, 4)}</code>
       </pre>
     </>
   );
@@ -28,7 +28,6 @@ const meta: Meta<DemoProps> = {
   argTypes: {
     title: {
       type: "string",
-      defaultValue: "document",
       description: "Its change the browser top bar title",
     },
   },
@@ -41,4 +40,6 @@ export default meta;
 
 const Template: Story<DemoProps> = (args) => <DemoWithControls {...args} />;
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  title: "document",
+};

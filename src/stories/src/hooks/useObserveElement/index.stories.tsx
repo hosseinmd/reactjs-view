@@ -9,9 +9,8 @@ type DemoProps = {
 
 const Demo = ({ reference }: DemoProps) => {
   const parentRef = useRef<HTMLDivElement>(null);
-  const { isSmallScreen, isMediumScreen, isLargeScreen } = useObserveElement(
-    reference ? parentRef : undefined,
-  );
+  const { isSmallScreen, isMediumScreen, isLargeScreen, isExtraLargeScreen } =
+    useObserveElement(reference ? parentRef : undefined);
 
   return (
     <div
@@ -25,6 +24,7 @@ const Demo = ({ reference }: DemoProps) => {
               isSmallScreen,
               isMediumScreen,
               isLargeScreen,
+              isExtraLargeScreen,
               reference: reference ? "Parent is referenced" : undefined,
             },
             null,
@@ -32,19 +32,6 @@ const Demo = ({ reference }: DemoProps) => {
           )}
         </code>
       </pre>
-      <div
-        style={{
-          width: 200,
-          height: 200,
-          backgroundColor: isSmallScreen
-            ? "red"
-            : isMediumScreen
-            ? "blue"
-            : isLargeScreen
-            ? "teal"
-            : "pink",
-        }}
-      />
     </div>
   );
 };

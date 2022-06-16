@@ -32,7 +32,7 @@ export function useObserveElement<S extends HTMLElement>(ref?: RefObject<S>) {
     return () => observer.unobserve(node);
   }, [ref]);
 
-  const observeMaxQuery = useCallback(
+  const isWidthSmallerThan = useCallback(
     (query: number) => {
       if (ref?.current) {
         return size <= query;
@@ -44,7 +44,7 @@ export function useObserveElement<S extends HTMLElement>(ref?: RefObject<S>) {
     [ref, size, width],
   );
 
-  const observeMinQuery = useCallback(
+  const isWidthLargerThan = useCallback(
     (query: number) => {
       if (ref?.current) {
         return size > query;
@@ -56,7 +56,7 @@ export function useObserveElement<S extends HTMLElement>(ref?: RefObject<S>) {
     [ref, size, width],
   );
 
-  const observeBetweenQueries = useCallback(
+  const isWidthBetween = useCallback(
     (queries: [number, number]) => {
       if (queries[0] >= queries[1]) {
         throw new Error(
@@ -74,26 +74,35 @@ export function useObserveElement<S extends HTMLElement>(ref?: RefObject<S>) {
     [ref, size, width],
   );
 
-  const isLaptop = observeBetweenQueries([768, 1024]);
+  const isLaptop = isWidthBetween([768, 1024]);
 
-  const isLargeScreen = observeMaxQuery(1024);
+  const isLargeScreen = isWidthSmallerThan(1024);
 
-  const isSmallScreen = observeMaxQuery(480);
+  const isSmallScreen = isWidthSmallerThan(480);
 
-  const isMediumScreen = observeMaxQuery(768);
+  const isMediumScreen = isWidthSmallerThan(768);
 
-  const isExtraLargeScreen = observeMinQuery(1200);
+  const isExtraLargeScreen = isWidthLargerThan(1200);
 
-  const isMobile = observeBetweenQueries([320, 480]);
+  const isMobile = isWidthBetween([320, 480]);
 
-  const isTablet = observeBetweenQueries([480, 768]);
+  const isTablet = isWidthBetween([480, 768]);
 
   return {
-    observeMaxQuery,
-    observeMinQuery,
-    observeBetweenQueries,
+    /** @deprecated Use isWidthSmallerThan instead */
+    observeMaxQuery: isWidthSmallerThan,
+    isWidthSmallerThan,
+    /** @deprecated Use isWidthLargerThan instead */
+    observeMinQuery: isWidthLargerThan,
+    isWidthLargerThan,
+    /** @deprecated Use isWidthBetween instead */
+    observeBetweenQueries: isWidthBetween,
+    isWidthBetween,
+    /** @deprecated */
     isLaptop,
+    /** @deprecated */
     isTablet,
+    /** @deprecated */
     isMobile,
     isExtraLargeScreen,
     isLargeScreen,
