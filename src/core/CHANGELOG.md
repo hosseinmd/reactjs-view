@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/hosseinmd/reactjs-view/compare/v1.2.0...v1.2.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* observeElement property name ([56181aa](https://github.com/hosseinmd/reactjs-view/commit/56181aa61635ab1767fd1eab7f7948102864bc10))
+
+
+
+
+
 # [1.2.0](https://github.com/hosseinmd/reactjs-view/compare/v1.1.0...v1.2.0) (2022-06-15)
 
 
