@@ -67,6 +67,8 @@ function getResizeObserver(): any {
 type LayoutValue = {
   x: number;
   y: number;
+  left: number;
+  top: number;
   width: number;
   height: number;
 };
