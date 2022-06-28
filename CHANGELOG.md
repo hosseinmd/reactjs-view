@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/hosseinmd/reactjs-view/compare/v1.2.1...v1.2.2) (2022-06-28)
+
+
+### Bug Fixes
+
+* add left and top to on layout types ([013ffe4](https://github.com/hosseinmd/reactjs-view/commit/013ffe4f7b6f71fffb9d83c2611626bad4ddde72))
+* useElementLayout when window size changed ([3ca2190](https://github.com/hosseinmd/reactjs-view/commit/3ca2190be63787439b5a2dece32cb96be741adfa))
+
+
+
+
+
 ## [1.2.1](https://github.com/hosseinmd/reactjs-view/compare/v1.2.0...v1.2.1) (2022-06-16)
 
 
