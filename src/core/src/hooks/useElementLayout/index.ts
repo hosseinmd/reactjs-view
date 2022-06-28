@@ -1,4 +1,5 @@
 import { RefObject, useEffect } from "react";
+import { useWindowDimensions } from "../useWindowDimensions";
 
 const canUseDOM = !!(
   typeof window !== "undefined" &&
@@ -85,6 +86,7 @@ function useElementLayout(
   ref: RefObject<any>,
   onLayout?: (e: LayoutEvent) => void,
 ) {
+  const { width, height } = useWindowDimensions();
   const observer = getResizeObserver();
 
   useEffect(() => {
@@ -110,7 +112,7 @@ function useElementLayout(
         observer.unobserve(node);
       }
     };
-  }, [ref, observer]);
+  }, [ref, observer, width, height]);
 }
 
 const getBoundingClientRect = (node?: HTMLElement) => {
