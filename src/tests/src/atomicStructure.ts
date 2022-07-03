@@ -138,12 +138,9 @@ function recursiveChecker(
         });
 
         if (
-          (components[getIndex(atomicName) - 1] &&
-            join(componentDir, path.node.source.value).startsWith(
-              components[getIndex(atomicName) - 1],
-            )) ||
+          components[getIndex(atomicName) - 1] &&
           join(componentDir, path.node.source.value).startsWith(
-            components[getIndex(atomicName)],
+            components[getIndex(atomicName) - 1],
           )
         ) {
           isCorrectPosition = true;
