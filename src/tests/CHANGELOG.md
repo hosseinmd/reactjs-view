@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/hosseinmd/reactjs-view/compare/v1.2.2...v1.2.3) (2022-07-03)
+
+
+### Bug Fixes
+
+* atomic tests ([f38aa08](https://github.com/hosseinmd/reactjs-view/commit/f38aa08afdda1bba3119ee459d4c54ec74413a1e))
+
+
+
+
+
 # [1.2.0](https://github.com/hosseinmd/reactjs-view/compare/v1.1.0...v1.2.0) (2022-06-15)
 
 
