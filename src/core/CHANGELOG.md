@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/hosseinmd/reactjs-view/compare/v1.2.4...v2.0.0) (2022-07-09)
+
+
+### Features
+
+* useThrottledEffect ([da66d10](https://github.com/hosseinmd/reactjs-view/commit/da66d108cb176a94e62ff38ca8f51f39fff18854))
+
+
+
+
+
 ## [1.2.2](https://github.com/hosseinmd/reactjs-view/compare/v1.2.1...v1.2.2) (2022-06-28)
 
 
