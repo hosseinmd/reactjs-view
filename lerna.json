@@ -10,7 +10,7 @@
   "command": {
     "publish": {},
     "version": {
-      "message": "chore(reactjs-view): publish",
+      "message": "chore(release): publish %s",
       "conventionalCommits": true,
       "yes": true
     }

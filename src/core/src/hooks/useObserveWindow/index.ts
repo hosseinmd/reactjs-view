@@ -1,53 +1,31 @@
-import { RefObject, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback } from "react";
 import {
   EXTRA_LARGE_SCREEN,
   LARGE_SCREEN,
   MEDIUM_SCREEN,
   SMALL_SCREEN,
 } from "../../constants";
+import { useWindowDimensions } from "../useWindowDimensions";
 
-export function useObserveElement<S extends HTMLElement>(ref: RefObject<S>) {
-  const [size, setSize] = useState<number>(0);
-  const isInitialRef = useRef<boolean>(false);
-
-  useEffect(() => {
-    if (!ref?.current || isInitialRef.current) return;
-
-    const node = ref.current;
-
-    const bounds = node.getBoundingClientRect();
-
-    if (bounds) {
-      setSize(bounds.width);
-      isInitialRef.current = true;
-    }
-  }, [ref]);
-
-  useEffect(() => {
-    if (!ref?.current) return;
-    const node = ref.current;
-
-    const observer = new ResizeObserver(([entry]) => {
-      setSize(entry?.contentRect?.width);
-    });
-
-    observer.observe(node, { box: "border-box" });
-
-    return () => observer.unobserve(node);
-  }, [ref]);
+export function useObserveWindow() {
+  const { width } = useWindowDimensions();
 
   const getIsWidthSmallerThan = useCallback(
     (query: number) => {
-      return size <= query;
+      if (typeof window === "undefined") return;
+
+      return width <= query;
     },
-    [size],
+    [width],
   );
 
   const getIsWidthLargerThan = useCallback(
     (query: number) => {
-      return size > query;
+      if (typeof window === "undefined") return;
+
+      return width > query;
     },
-    [size],
+    [width],
   );
 
   const getIsWidthBetween = useCallback(
@@ -58,9 +36,11 @@ export function useObserveElement<S extends HTMLElement>(ref: RefObject<S>) {
         );
       }
 
-      return size > queries[0] && size <= queries[1];
+      if (typeof window === "undefined") return;
+
+      return width > queries[0] && width <= queries[1];
     },
-    [size],
+    [width],
   );
 
   const isSmallerThenLarge = getIsWidthSmallerThan(LARGE_SCREEN);
@@ -76,8 +56,8 @@ export function useObserveElement<S extends HTMLElement>(ref: RefObject<S>) {
     getIsWidthLargerThan,
     getIsWidthBetween,
     isSmallerThanExtraLarge,
-    isSmallerThenLarge,
     isSmallerThanMedium,
     isSmallerThanSmall,
+    isSmallerThenLarge,
   };
 }

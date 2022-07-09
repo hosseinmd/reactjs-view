@@ -1,19 +1,17 @@
 import { Meta, Story } from "@storybook/react";
-import { useRef } from "react";
-import { useObserveElement } from "reactjs-view-core";
+import { useObserveWindow } from "reactjs-view-core";
 import { RenderingControls } from "../../container/renderingControls";
 
 const Demo = () => {
-  const parentRef = useRef<HTMLDivElement>(null);
   const {
     isSmallerThanExtraLarge,
     isSmallerThanMedium,
     isSmallerThanSmall,
     isSmallerThenLarge,
-  } = useObserveElement(parentRef);
+  } = useObserveWindow();
 
   return (
-    <div ref={parentRef} style={{ border: "1px dashed #ccc" }}>
+    <div>
       <pre>
         <code>
           {JSON.stringify(
@@ -28,7 +26,6 @@ const Demo = () => {
           )}
         </code>
       </pre>
-      <p>Parent is referenced</p>
     </div>
   );
 };
@@ -40,16 +37,8 @@ const DemoWithControls = () => (
 );
 
 const meta: Meta = {
-  title: "Hooks/useObserveElement",
+  title: "Hooks/useObserveWindow",
   component: DemoWithControls,
-  argTypes: {
-    reference: {
-      defaultValue: false,
-      type: "boolean",
-      description:
-        "Switch to true  to the hook reference the parent element to changes size",
-    },
-  },
   parameters: {
     controls: { expanded: true },
   },
