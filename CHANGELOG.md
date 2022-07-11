@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/hosseinmd/reactjs-view/compare/v2.0.0...v2.1.0) (2022-07-11)
+
+
+### Features
+
+* useDebounceAnimationFrameCallback ([bbcf04f](https://github.com/hosseinmd/reactjs-view/commit/bbcf04fd455506e1e1f6cd1a572a30d73e8b98f8))
+
+
+
+
+
 # [2.0.0](https://github.com/hosseinmd/reactjs-view/compare/v1.2.4...v2.0.0) (2022-07-09)
 
 
