@@ -1,5 +1,6 @@
 export * from "./useCounter";
 export * from "./useDebounce";
+export * from "./useDebounceAnimationFrameCallback";
 export * from "./useElementLayout";
 export * from "./useEvent";
 export * from "./useInteractions";
