@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/hosseinmd/reactjs-view/compare/v2.1.0...v2.2.0) (2022-07-26)
+
+
+### Features
+
+* add handlers to useInteraction ([7036d5f](https://github.com/hosseinmd/reactjs-view/commit/7036d5f5301d2c3d884fc558f12a73093fe25d4c))
+
+
+
+
+
 # [2.1.0](https://github.com/hosseinmd/reactjs-view/compare/v2.0.0...v2.1.0) (2022-07-11)
 
 
