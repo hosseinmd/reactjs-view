@@ -1,4 +1,8 @@
-import { useGesture } from "@use-gesture/react";
+import {
+  AnyHandlerEventTypes,
+  GestureHandlers,
+  useGesture,
+} from "@use-gesture/react";
 import { useState } from "react";
 
 /**
@@ -7,7 +11,16 @@ import { useState } from "react";
  *
  *   return <button {...eventHandlers()} />;
  */
-function useInteractions() {
+function useInteractions<HandlerTypes extends AnyHandlerEventTypes>({
+  onHover,
+  onBlur,
+  onFocus,
+  onMouseDown,
+  onMouseUp,
+  onMouseLeave,
+  onKeyUp,
+  ...handlers
+}: GestureHandlers<HandlerTypes> = {}) {
   const usedProperty: string[] = [];
   const [isFocused, setFocused] = useState(false);
   const [isHovered, setHovered] = useState(false);
@@ -15,35 +28,51 @@ function useInteractions() {
   const [isTabFocused, setTabFocused] = useState(false);
 
   const eventHandlers = useGesture({
+    ...handlers,
     // focus
-    onFocus() {
+    onFocus(...args) {
       usedProperty.includes("isFocused") && setFocused(true);
+
+      onFocus?.(...args);
     },
-    onBlur() {
+    onBlur(...args) {
       usedProperty.includes("isFocused") && setFocused(false);
       usedProperty.includes("isTabFocused") &&
         isTabFocused &&
         setTabFocused(false);
+
+      onBlur?.(...args);
     },
     // Hover
-    onHover(onHover) {
-      const { hovering: isHovering } = onHover;
+    onHover(hover) {
+      const { hovering: isHovering } = hover;
       usedProperty.includes("isHovered") && setHovered(Boolean(isHovering));
+
+      onHover?.(hover);
     },
     // Active
-    onMouseDown() {
+    onMouseDown(...args) {
       usedProperty.includes("isActive") && setActive(true);
+
+      onMouseDown?.(...args);
     },
-    onMouseUp() {
+    onMouseUp(...args) {
       usedProperty.includes("isActive") && setActive(false);
+
+      onMouseUp?.(...args);
     },
-    onMouseLeave() {
+    onMouseLeave(...args) {
       usedProperty.includes("isActive") && setActive(false);
+
+      onMouseLeave?.(...args);
     },
-    onKeyUp({ event }) {
+    onKeyUp(state, ...args) {
+      const { event } = state;
       if ((event as any).key === "Tab") {
         usedProperty.includes("isTabFocused") && setTabFocused(true);
       }
+
+      onKeyUp?.(state, ...args);
     },
   });
 
@@ -55,14 +84,14 @@ function useInteractions() {
     isTabFocused,
   };
 
-  const handler3 = {
+  const proxyHandler = {
     get: function (target: any, prop: string) {
       usedProperty.push(prop);
       return target[prop];
     },
   };
 
-  const proxy3 = new Proxy<typeof target>(target, handler3);
+  const proxy3 = new Proxy<typeof target>(target, proxyHandler);
 
   return proxy3;
 }
