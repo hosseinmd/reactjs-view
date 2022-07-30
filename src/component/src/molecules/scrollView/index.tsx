@@ -34,7 +34,6 @@ const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
       const node = scrollContainerRef.current;
 
       const onWheel = (e: WheelEvent) => {
-        e.preventDefault();
         node.scrollLeft += e.deltaY;
       };
 
