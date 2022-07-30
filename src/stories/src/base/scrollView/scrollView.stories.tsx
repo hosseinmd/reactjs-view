@@ -7,8 +7,8 @@ export default {
   component: ScrollView,
 } as Meta<ScrollViewProps>;
 
-const children = (
-  <View style={{ width: 500 }}>
+const LoremEpsum = ({ width = 500 }: { width?: number }) => (
+  <View style={{ width }}>
     <Text
       theme="regular"
       lang="fa"
@@ -105,7 +105,7 @@ const Template: Story<ScrollViewProps> = (args) => (
 
 export const Regular = Template.bind({});
 Regular.args = {
-  children,
+  children: <LoremEpsum />,
 };
 
 const FlexTemplate: Story<ScrollViewProps> = (args) => (
@@ -121,5 +121,34 @@ const FlexTemplate: Story<ScrollViewProps> = (args) => (
 
 export const Flex = FlexTemplate.bind({});
 Flex.args = {
-  children,
+  children: <LoremEpsum />,
+};
+
+const HorizontalTemplate: Story<ScrollViewProps> = (args) => (
+  <StoryContainer>
+    <Text style={{ marginBlock: 24, width: 50 }}>
+      امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به
+      پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+      پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. امید داشت که
+      تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+      زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+      دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. امید داشت که تمام و دشواری
+      موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
+    </Text>
+    <ScrollView isHorizontal {...args} style={{ flex: 1, minHeight: 150 }} />
+    <Text style={{ marginBlock: 24, width: 50 }}>
+      امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به
+      پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+      پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. امید داشت که
+      تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+      زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+      دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. امید داشت که تمام و دشواری
+      موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
+    </Text>
+  </StoryContainer>
+);
+
+export const Horizontal = HorizontalTemplate.bind({});
+Horizontal.args = {
+  children: <LoremEpsum width={1500} />,
 };
