@@ -34,8 +34,14 @@ const ScrollView = forwardRef<HTMLDivElement, ScrollViewProps>(
       const node = scrollContainerRef.current;
 
       const onWheel = (e: WheelEvent) => {
-        e.preventDefault();
         node.scrollLeft += e.deltaY;
+        if (
+          (e.deltaY > 0 &&
+            node.scrollWidth - node.offsetWidth > node.scrollLeft) ||
+          (e.deltaY < 0 && node.scrollLeft > 0)
+        ) {
+          e.preventDefault();
+        }
       };
 
       node.addEventListener("wheel", onWheel);
