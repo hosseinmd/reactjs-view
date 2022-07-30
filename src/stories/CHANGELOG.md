@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/hosseinmd/reactjs-view/compare/v2.2.0...v2.2.1) (2022-07-30)
+
+
+### Bug Fixes
+
+* preventDefault from onWheel event ([#10](https://github.com/hosseinmd/reactjs-view/issues/10)) ([9d2672f](https://github.com/hosseinmd/reactjs-view/commit/9d2672f9d3a15f0dcbcfb8995aeebae10dc5dfec))
+
+
+
+
+
 # [2.2.0](https://github.com/hosseinmd/reactjs-view/compare/v2.1.0...v2.2.0) (2022-07-26)
 
 **Note:** Version bump only for package stories
