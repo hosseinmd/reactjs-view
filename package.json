@@ -19,7 +19,7 @@
     "build": "yarn lerna-clean && yarn lerna-build",
     "lint": "eslint . --ext tsx,ts  --fix",
     "lint-commit": "cross-env COMMIT=true eslint . --ext tsx,ts  --fix",
-    "test": "yarn build && react-app-rewired test --silent --detectOpenHandles",
+    "test": "yarn build && react-app-rewired test --detectOpenHandles",
     "prettierAll": "prettier --write .",
     "storybook": "start-storybook -p 6006 -s public",
     "storybook-build": "yarn build && build-storybook -s public",
