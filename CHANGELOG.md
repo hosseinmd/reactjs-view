@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/hosseinmd/reactjs-view/compare/v2.2.1...v2.3.0) (2022-08-28)
+
+
+### Features
+
+* add exclude to test checkPersian ([65d0aa8](https://github.com/hosseinmd/reactjs-view/commit/65d0aa816fb3fd691190206abd56501379e4ebe4))
+
+
+
+
+
 ## [2.2.1](https://github.com/hosseinmd/reactjs-view/compare/v2.2.0...v2.2.1) (2022-07-30)
 
 
