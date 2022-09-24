@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ES6",
     "composite": true,
     "declaration": true,
     "checkJs": false,
