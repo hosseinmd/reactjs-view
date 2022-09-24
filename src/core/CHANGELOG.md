@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/hosseinmd/reactjs-view/compare/v2.3.0...v2.4.0) (2022-09-24)
+
+
+### Features
+
+* compile to js ([f79fdc0](https://github.com/hosseinmd/reactjs-view/commit/f79fdc04f024ff9e79b8ef29a73008ac8a6764d0))
+
+
+
+
+
 # [2.2.0](https://github.com/hosseinmd/reactjs-view/compare/v2.1.0...v2.2.0) (2022-07-26)
 
 
