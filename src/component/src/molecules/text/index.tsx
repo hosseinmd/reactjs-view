@@ -4,7 +4,7 @@ import { BaseText, BaseTextProps } from "./base";
 import { fonts, fontSizes, fontWeights, useThemes } from "./styles";
 
 interface TextProps extends BaseTextProps {
-  theme?: "medium" | "regular" | "light" | "bold";
+  theme?: "medium" | "regular" | "light" | "bold" | "semiBold";
   lang?: "fa" | "en";
   weight?: keyof typeof fontWeights | number;
   color?: string;

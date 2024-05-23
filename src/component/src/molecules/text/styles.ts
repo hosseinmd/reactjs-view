@@ -98,6 +98,16 @@ export const fonts = {
     url: YekanBakhFaBold,
     format: "woff",
   },
+  "semiBold-en": {
+    name: "RobotoBold",
+    url: RobotoBold,
+    format: "woff",
+  },
+  "semiBold-fa": {
+    name: "YekanBakhFaBold",
+    url: YekanBakhFaBold,
+    format: "woff",
+  },
 };
 
 let _useThemes: (() => Record<keyof typeof fonts, string>) | undefined;
